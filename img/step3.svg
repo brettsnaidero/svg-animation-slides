@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="12px" height="12px" viewBox="0 0 12 12" style="enable-background:new 0 0 12 12;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#08303F;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:16,40;}
+	.st1{fill:none;stroke:#E02259;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<title>Artboard 1steps</title>
+<path class="st0" d="M8.8999996,9L2.5999999,2.5999999C2.3402646,2.3684845,2.3173878,1.9702471,2.5489032,1.7105118
+	C2.6639948,1.5813915,2.8271117,1.5052702,3,1.5h5.8999996"/>
+<path class="st0" d="M8.8999996,3L2.5999999,9.3999996c-0.2597356,0.2315149-0.2826128,0.6297522-0.0510976,0.8894882
+	C2.6639938,10.4186087,2.8271112,10.49473,3,10.5h5.8999996"/>
+<line class="st0" x1="8.8999996" y1="6" x2="3" y2="6"/>
+<line class="st1" x1="2.9937501" y1="3" x2="8.8999996" y2="9"/>
+<line class="st1" x1="2.9937501" y1="9" x2="8.8999996" y2="3"/>
+</svg>

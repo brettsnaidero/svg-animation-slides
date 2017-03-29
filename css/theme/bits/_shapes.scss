@@ -1,0 +1,995 @@
+$sizing-ratio: 0.6;
+
+$background-color: #27b6d4;
+$border-color: darken(#27b6d4,40%);
+// $border-color: #FFF;
+
+$background-color: #ffffff;
+$border-color: #520000;
+
+.animated-pattern {
+  height: 480px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	position: relative;
+
+  background-color: $background-color;
+
+	* {
+	  box-sizing: border-box;
+	}
+
+	.art {
+	  width: 475px * $sizing-ratio;
+	  height: 325px * $sizing-ratio;
+	  // background-color: rgba(0,0,0,0.1);
+	  position: relative;
+	}
+
+	/* Angle Top Left */
+	.angle-topleft {
+	  top: 0;
+	  left: 0;
+	  width: 50px * $sizing-ratio;
+	  height: 4px * $sizing-ratio;
+	  border-radius: (2px  * $sizing-ratio) (2px * $sizing-ratio) (2px * $sizing-ratio) 0;
+	  background-color: $border-color;
+	  position: absolute;
+
+	  &:after {
+	    content: '';
+	    width: 4px * $sizing-ratio;
+	    height: 50px * $sizing-ratio;
+	    border-radius: (2px * $sizing-ratio) 0 (2px * $sizing-ratio) (2px * $sizing-ratio);
+	    background-color: $border-color;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	  }
+	}
+
+	/* Angle Bottom Left */
+	.angle-bottomleft {
+	  top: 100px * $sizing-ratio;
+	  left: 0;
+	  width: 4px * $sizing-ratio;
+	  height: 50px * $sizing-ratio;
+	  border-radius: (2px * $sizing-ratio) (2px * $sizing-ratio) 0 (2px * $sizing-ratio);
+	  background-color: $border-color;
+	  position: absolute;
+
+	  &:after {
+	    content: '';
+	    width: 50px * $sizing-ratio;
+	    height: 4px * $sizing-ratio;
+	    border-radius: 0 (2px * $sizing-ratio) (2px * $sizing-ratio) (2px * $sizing-ratio);
+	    background-color: $border-color;
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	  }
+	}
+
+	/* Ball Bounce */
+	.ball {
+	  top: 50px * $sizing-ratio;
+	  left: 50px * $sizing-ratio;
+	  width: 50px * $sizing-ratio;
+	  height: 50px * $sizing-ratio;
+	  border: (4px * $sizing-ratio) solid $border-color;
+	  border-radius: 50%;
+	  background-color: #fc8899;
+	  position: absolute;
+	  transform: skewX((-10px * $sizing-ratio));
+	  transform-origin: 50% 100%;
+
+	  &:after {
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 40px * $sizing-ratio;
+	    height: 40px * $sizing-ratio;
+	    border-radius: 50%;
+	    background-color: #ff9cad;
+	  }
+
+	  animation-duration: 1.5s;
+	  animation-name: bounce;
+	  animation-iteration-count: infinite;
+	  animation-direction: linear;
+	  animation-timing-function: linear;
+	}
+
+	@keyframes bounce {
+	  0% {
+	    transform: scale(1, 1) translate(0, 0);
+	/*     animation-timing-function: ease-in; */
+	  }
+	  10% {
+	    transform: scale(1.1, 0.9) translate(0, 0);
+	/*     animation-timing-function: ease-out; */
+	  }
+	  20% {
+	    transform: scale(1, 1) translate(0, 0);
+	    animation-timing-function: ease-out;
+	  }
+	  40% {
+	    transform: scale(0.9, 1.1) translate(0, (-25px * $sizing-ratio));
+	    animation-timing-function: ease-in;
+	  }
+	  60% {
+	    transform: scale(1, 1) translate(0, 0);
+	    animation-timing-function: ease-in;
+	  }
+	  65% {
+	    transform: scale(1.1, 0.9) translate(0, 0);
+	    animation-timing-function: ease-in;
+	  }
+	  70% {
+	    transform: scale(1, 1) translate(0, 0);
+	/*     animation-timing-function: ease-in; */
+	  }
+	  100% {
+	    transform: scale(1, 1) translate(0, 0);
+	/*     animation-timing-function: ease-in; */
+	  }
+	}
+
+	/* Squiggle */
+	.squiggle {
+	  width: 50px * $sizing-ratio;
+	  height: 50px * $sizing-ratio;
+	  position: absolute;
+
+	  svg {
+	    position: absolute;
+	    bottom: -48px * $sizing-ratio;
+	    left: -48px * $sizing-ratio;
+	    width: 100px * $sizing-ratio;
+	    height: 100px * $sizing-ratio;
+
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+
+	    stroke-dasharray: 190;
+	    stroke-dashoffset: 186;
+
+	    transform: translate(0, 0);
+
+	    animation-duration: 2s;
+	    animation-name: squiggle;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-timing-function: linear;
+	  }
+	}
+
+	@keyframes squiggle {
+	  0% {
+	    stroke-dashoffset: 186;
+	    transform: translate(0, 0);
+	  }
+	  100% {
+	    stroke-dashoffset: 355;
+	    transform: translate((43px * $sizing-ratio), (-43px * $sizing-ratio));
+	  }
+	}
+
+	/* Left Squiggle */
+	.squiggle-left {
+	  top: 175px * $sizing-ratio;
+	  left: 0;
+	}
+
+	/* Left Squiggle */
+	.squiggle-right {
+	  top: 145px * $sizing-ratio;
+	  left: 265px * $sizing-ratio;
+	}
+
+	/* Cross */
+	.cross {
+	  position: absolute;
+	  width: 40px * $sizing-ratio;
+	  height: 40px * $sizing-ratio;
+	  // background-color: rgba(0,0,0,0.05);
+
+	  animation-name: spin;
+	  animation-duration: 2s;
+	  animation-iteration-count: infinite;
+	  animation-direction: linear;
+	  animation-delay: 1s;
+	  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	  &:before {
+	    content: '';
+	    position: absolute;
+	    height: 40px * $sizing-ratio;
+		  width: 4px * $sizing-ratio;
+		  border-radius: 2px * $sizing-ratio;
+		  position: absolute;
+			top: 50%;
+	    margin-top: -20px * $sizing-ratio;
+			left: 50%;
+	    margin-left: -2px * $sizing-ratio;
+		  background-color: $border-color;
+	  }
+
+	  &:after {
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    width: 40px * $sizing-ratio;
+	    height: 4px * $sizing-ratio;
+	    border-radius: 2px * $sizing-ratio;
+	    margin-top: -2px * $sizing-ratio;
+	    margin-left: -20px * $sizing-ratio;
+	    background-color: $border-color;
+	  }
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		50% {
+			transform: rotate(-90deg);
+		}
+	  100% {
+			transform: rotate(-90deg);
+		}
+	}
+
+	@keyframes spin2 {
+		0% {
+			transform: rotate(45deg);
+		}
+		50% {
+			transform: rotate(135deg);
+		}
+	  100% {
+			transform: rotate(135deg);
+		}
+	}
+
+	/* Cross Left */
+	.cross-left {
+	  top: 225px * $sizing-ratio;
+	  left: 45px * $sizing-ratio;
+	  animation-delay: 2s;
+	  animation-name: spin2;
+	  transform: rotate(45deg);
+	}
+
+	.cross-right {
+	  top: 65px * $sizing-ratio;
+	  left: 150px * $sizing-ratio;
+	}
+
+	/* Triangle */
+	.triangle {
+	  position: absolute;
+	  height: 30px * $sizing-ratio;
+	  width: 55px * $sizing-ratio;
+
+	  svg {
+	    fill: #F7DB98;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+	  }
+	}
+
+	.triangle-bottom-left {
+	  top: 300px * $sizing-ratio;
+	  left: -5px * $sizing-ratio;
+	}
+
+	.triangle-bottom-middle {
+	  top: 300px * $sizing-ratio;
+	  left: 235px * $sizing-ratio;
+
+	  svg {
+	    fill: #c6e392;
+	  }
+	}
+
+	.ra-triangle {
+	  height: 40px * $sizing-ratio;
+	  width: 40px * $sizing-ratio;
+	  position: absolute;
+	}
+
+	.ra-top {
+	  top: 0;
+	  left: 135px * $sizing-ratio;
+
+	  .bg {
+	    fill: #f7cef7;
+	    transform-origin: 0% 0%;
+
+	    animation-name: growtriangle;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: linear;
+	  }
+	  .line {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+	  }
+	}
+
+	.ra-bottom {
+	  top: 125px * $sizing-ratio;
+	  left: 165px * $sizing-ratio;
+
+	  svg {
+	    fill: #f7cfd0;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+	  }
+	}
+
+	.ra-right {
+	  top: 110px * $sizing-ratio;
+	  left: 435px * $sizing-ratio;
+
+	  .bg {
+	    fill: #a8e9e3;
+	    transform-origin: 100% 100%;
+
+	    animation-name: growtriangle;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: linear;
+	  }
+	  .line {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+	  }
+	}
+
+	@keyframes growtriangle {
+		0% {
+			transform: scale(0,0);
+		}
+		20% {
+			transform: scale(1,1);
+		}
+	  100% {
+			transform: rotate(1,1);
+		}
+	}
+
+	/* Diagonal Line */
+	.diag {
+	  position: absolute;
+	  top: 295px * $sizing-ratio;
+	  left: 100px * $sizing-ratio;
+	  width: 4px * $sizing-ratio;
+	  height: 40px * $sizing-ratio;
+	  background-color: $border-color;
+	  border-radius: (4px * $sizing-ratio);
+	  transform: rotate(-45deg);
+	}
+
+	/* Box */
+	.box {
+	  width: 50px * $sizing-ratio;
+	  height: 50px * $sizing-ratio;
+	  border: (4px * $sizing-ratio) solid $border-color;
+	  position: absolute;
+	  top: 0;
+	  left: 425px * $sizing-ratio;
+	  border-radius: 4px * $sizing-ratio;
+
+	  background-color: #f5dcbe;
+
+	  overflow: hidden;
+
+	  animation-name: boxSpin;
+	  animation-duration: 2s;
+	  animation-iteration-count: infinite;
+	  animation-direction: linear;
+	  animation-delay: 0s;
+	  animation-timing-function: ease;
+
+	  &:before {
+	    content: '';
+	    border-right: (4px * $sizing-ratio) solid $border-color;
+	    position: absolute;
+	    top: 0px;
+	    left: -4px * $sizing-ratio;
+	    height: 42px * $sizing-ratio;
+	    width: 0px;
+	    background-color: #ffedd7;
+
+	    animation-name: boxX;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: ease;
+	  }
+	  &:after {
+	    content: '';
+	    border-bottom: (4px * $sizing-ratio) solid $border-color;
+	    position: absolute;
+	    top: -4px * $sizing-ratio;
+	    left: 0px;
+	    height: 0px;
+	    width: 42px * $sizing-ratio;
+	    background-color: #f5dcbe;
+
+	    animation-name: boxY;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: ease;
+	  }
+	}
+
+	@keyframes boxSpin {
+	  0% {
+	    transform: scale(1,1);
+		}
+	  12.5% {
+	    transform: scale(1.1,1);
+	  }
+		25% {
+			transform: scale(1,1);
+		}
+	  50% {
+			transform: scale(1,1);
+		}
+	  67.5% {
+	    transform: scale(1,1.1);
+	  }
+	  75% {
+			transform: scale(1,1);
+		}
+	  100% {
+			transform: scale(1,1);
+		}
+	}
+
+	@keyframes boxX {
+		0% {
+			width: 0px;
+		}
+		25% {
+			width: calc(100% + #{4px * $sizing-ratio * 2});
+		}
+	  100% {
+			width: calc(100% + #{4px * $sizing-ratio * 2});
+		}
+	}
+	@keyframes boxY {
+		0% {
+			height: 0px;
+		}
+	  50% {
+			height: 0px;
+		}
+	  75% {
+			height: calc(100% + #{4px * $sizing-ratio * 2});
+		}
+	  100% {
+			height: calc(100% + #{4px * $sizing-ratio * 2});
+		}
+	}
+
+	/* Cylinder */
+	.cylinder {
+	  width: 50px * $sizing-ratio;
+	  height: 50px * $sizing-ratio;
+	  border: (4px * $sizing-ratio) solid $border-color;
+	  position: absolute;
+	  top: 220px * $sizing-ratio;
+	  left: 125px * $sizing-ratio;
+	  border-radius: 4px * $sizing-ratio;
+
+	  background-color: #a8e9e3;
+
+	  animation-name: cylinderChop;
+	  animation-duration: 1s;
+	  animation-iteration-count: infinite;
+	  animation-direction: alternate;
+	  animation-delay: 0s;
+	  animation-timing-function: ease;
+
+	  .top {
+	    position: absolute;
+	    top: -4px * $sizing-ratio;
+	    left: -4px * $sizing-ratio;
+	    width: 50px * $sizing-ratio;
+	    height: 25px * $sizing-ratio;
+	    border: (4px * $sizing-ratio) solid $border-color;
+	    border-radius: 50%;
+	    background-color: #a6faf0;
+	    z-index: 2;
+
+	    transform: scale(1,1) translateY(-15px * $sizing-ratio);
+
+	    animation-name: cylinderTop;
+	    animation-duration: 1s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	    animation-delay: 0s;
+	    animation-timing-function: ease;
+	  }
+	  .bottom {
+	    position: absolute;
+	    bottom: -4px * $sizing-ratio;
+	    left: -4px * $sizing-ratio;
+	    width: 50px * $sizing-ratio;
+	    height: 25px * $sizing-ratio;
+	    border: (4px * $sizing-ratio) solid $border-color;
+	    border-radius: 50%;
+	    background-color: #7bded7;
+
+	    transform: scale(1,1) translateY(15px * $sizing-ratio);
+
+	    animation-name: cylinderBottom;
+	    animation-duration: 1s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	    animation-delay: 0s;
+	    animation-timing-function: ease;
+
+	//     &:before {
+	//       content: '';
+	//       position: absolute;
+	//       left: 0;
+	//       bottom: 0;
+	//       width: 21px * $sizing-ratio;
+	//       height: 55px * $sizing-ratio;
+	//       border-radius: 0 0 0 (14px * $sizing-ratio);
+	//       background-color: rgba(#e6fffc,0.5);
+
+	//       animation-name: cylinderReflection;
+	//       animation-duration: 1s;
+	//       animation-iteration-count: infinite;
+	//       animation-direction: alternate;
+	//       animation-delay: 0s;
+	//       animation-timing-function: linear;
+	//     }
+	  }
+	}
+
+	@keyframes cylinderChop {
+	  0% {
+	    overflow: hidden;
+	  }
+	  15% {
+	    overflow: visible;
+	  }
+	  100% {
+	    overflow: visible;
+	  }
+	}
+
+	@keyframes cylinderTop {
+	  0% {
+			height: 0px;
+	    transform: scale(1,0.5) translateY(-50%);
+		}
+		100% {
+			height: 25px * $sizing-ratio;
+	    transform: scale(1,1) translateY(-50%);
+		}
+	}
+	@keyframes cylinderBottom {
+	  0% {
+			height: 0px;
+	    transform: scale(1,0.5) translateY(50%);
+		}
+	  100% {
+			height: 25px * $sizing-ratio;
+	    transform: scale(1,1) translateY(50%);
+		}
+	}
+
+	@keyframes cylinderReflection {
+	  0% {
+	    height: 83px * $sizing-ratio;
+	    border-radius: 0 0 0 0px;
+	  }
+	  100% {
+	    height: 55px * $sizing-ratio;
+	    border-radius: 0 0 0 (14px * $sizing-ratio);
+	  }
+	}
+
+	/* Vertical Line */
+	.vertical-line {
+	  height: 60px * $sizing-ratio;
+	  width: 10px * $sizing-ratio;
+	  position: absolute;
+	  top: 50px * $sizing-ratio;
+	  left: 235px * $sizing-ratio;
+
+	  svg {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 4;
+	    stroke-linecap: round;
+
+	    stroke-dasharray: 100;
+	    opacity: 0;
+
+	    animation-name: linecreep;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0.5s;
+	    animation-timing-function: linear;
+	  }
+	}
+
+	@keyframes linecreep {
+	  0% {
+	    stroke-dashoffset: -52;
+	    animation-timing-function: linear;
+	    opacity: 1;
+	  }
+	  20% {
+	    stroke-dashoffset: -30;
+	    animation-timing-function: ease-in;
+	    opacity: 1;
+	  }
+	  30% {
+	    stroke-dashoffset: -30;
+	    animation-timing-function: ease-in;
+	    opacity: 1;
+	  }
+	  50% {
+	    stroke-dashoffset: 120;
+	    animation-timing-function: linear;
+	    opacity: 1;
+	  }
+	  100% {
+	    stroke-dashoffset: 100;
+	    opacity: 1;
+	  }
+	}
+
+	/* Cone */
+	.cone {
+	  height: 60px * $sizing-ratio;
+	  width: 60px * $sizing-ratio;
+	  position: absolute;
+	  top: 25px * $sizing-ratio;
+	  left: 275px * $sizing-ratio;
+
+	  .cone-holder {
+	    height: 60px * $sizing-ratio;
+	    width: 60px * $sizing-ratio;
+
+	    animation-name: coneSpin;
+	    animation-duration: 1s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	    animation-delay: 0s;
+	    animation-timing-function: linear;
+
+	    transform-origin: 50% (55px * $sizing-ratio);
+	  }
+
+	  .bg {
+	    fill: #FFCE7A;
+	  }
+	  .line {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 4;
+	    stroke-linecap: round;
+	  }
+
+	  .top-holder {
+	    position: absolute;
+	    top: 5px * $sizing-ratio;
+	    left: 5px * $sizing-ratio;
+	    width: 50px * $sizing-ratio;
+	    height: 50px * $sizing-ratio;
+	    transform-origin: 50% 100%;
+	    z-index: 2;
+	  }
+
+	  .top {
+	    position: absolute;
+	    top: -1px * $sizing-ratio;
+	    left: -1px * $sizing-ratio;
+	    width: 52px * $sizing-ratio;
+	    height: 25px * $sizing-ratio;
+	    border: (4px * $sizing-ratio) solid $border-color;
+	    border-radius: 50%;
+	    background-color: #fef4a3;
+	    z-index: 2;
+	    transform: scale(1, 1) translateY(-50%);
+
+	    animation-name: coneTop;
+	    animation-duration: 1s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	    animation-delay: 0s;
+	    animation-timing-function: linear;
+	  }
+	}
+
+	@keyframes coneSpin {
+	  0% {
+	    transform: rotate(-62.5deg);
+	    animation-timing-function: ease-out;
+	  }
+	  100% {
+	    transform: rotate(45deg);
+	    animation-timing-function: ease-in;
+	  }
+	}
+
+	@keyframes coneTop {
+	  0% {
+			height: 0px;
+	    transform: scale(1,0.5) translateY(-50%);
+		}
+		100% {
+			height: 25px * $sizing-ratio;
+	    transform: scale(1,1) translateY(-50%);
+		}
+	}
+
+	/* Semicircle Rotated */
+	.semicircle-rotated {
+	  width: 55px * $sizing-ratio;
+	  height: 55px * $sizing-ratio;
+	  position: absolute;
+	  top: 75px * $sizing-ratio;
+	  left: 335px * $sizing-ratio;
+
+	  svg {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: -100;
+
+	    animation-name: semicircle;
+	    animation-duration: 1s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: linear;
+	  }
+	}
+
+	/* Semicircle Bottom */
+	.semicircle-bottom {
+	  height: 30px * $sizing-ratio;
+	  width: 55px * $sizing-ratio;
+	  position: absolute;
+	  top: 300px * $sizing-ratio;
+	  left: 150px * $sizing-ratio;
+
+	  svg {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: -100;
+
+	    animation-name: semicircle;
+	    animation-duration: 1s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: linear;
+	  }
+	}
+
+	@keyframes semicircle {
+	  0% {
+	    stroke-dasharray: 40;
+	    stroke-dashoffset: -152;
+	  }
+	  100% {
+	    stroke-dasharray: 40;
+	    stroke-dashoffset: 0;
+	  }
+	}
+
+	/* Long diagonal lines */
+	.longdiag {
+	  line {
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 4;
+	    stroke-linecap: round;
+
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: -100;
+
+	    animation-name: linepush;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-delay: 0s;
+	    animation-timing-function: ease;
+	  }
+
+	  .first {
+	    animation-delay: 0s;
+	  }
+	  .second {
+	    animation-delay: 1s;
+	  }
+	}
+
+	/* Long diagonal line right */
+	.longdiag-right {
+	  height: 50px * $sizing-ratio;
+	  width: 50px * $sizing-ratio;
+	  position: absolute;
+	  top: 200px * $sizing-ratio;
+	  left: 200px * $sizing-ratio;
+
+	  transform: rotate(180deg);
+	}
+
+	/* Long diagonal line left */
+	.longdiag-left {
+	  height: 50px * $sizing-ratio;
+	  width: 50px * $sizing-ratio;
+	  position: absolute;
+	  top: 135px * $sizing-ratio;
+	  left: 90px * $sizing-ratio;
+	}
+
+	/* Long diagonal line veryright */
+	.longdiag-veryright {
+	  height: 50px * $sizing-ratio;
+	  width: 50px * $sizing-ratio;
+	  position: absolute;
+	  top: 150px * $sizing-ratio;
+	  left: 360px * $sizing-ratio;
+
+	  .first {
+	    animation-delay: 0.5s;
+	  }
+	  .second {
+	    animation-delay: 1.5s;
+	  }
+	}
+
+	@keyframes linepush {
+	  0% {
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: -100;
+	  }
+	  25% {
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: -20;
+	  }
+	  50% {
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: -30;
+	  }
+	  75% {
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: 100;
+	  }
+	  100% {
+	    stroke-dasharray: 100;
+	    stroke-dashoffset: 100;
+	  }
+	}
+
+	/* Hand */
+	.hand {
+	  height: 200px * $sizing-ratio;
+	  width: 200px * $sizing-ratio;
+	  position: absolute;
+	  top: 176px * $sizing-ratio;
+	  left: 340px * $sizing-ratio;
+
+	  animation-name: handmove;
+	  animation-duration: 0.333s;
+	  animation-iteration-count: infinite;
+	  animation-direction: alternate;
+	  animation-delay: 0s;
+	  animation-timing-function: linear;
+	}
+
+	@keyframes handmove {
+	  0% {
+	    transform: rotate(0deg) translateY(0px);
+	  }
+	  100% {
+	    transform: rotate(2deg) translateY(-6px);
+	  }
+	}
+
+	/* Drawn Squiggle */
+	.drawn-squiggle {
+	  width: 50px * $sizing-ratio;
+	  height: 50px * $sizing-ratio;
+	  position: absolute;
+	  top: 250px * $sizing-ratio;
+	  left: 285px * $sizing-ratio;
+	  transform: rotate(-135deg);
+
+	  svg {
+	    position: absolute;
+	    bottom: -48px * $sizing-ratio;
+	    left: -48px * $sizing-ratio;
+	    width: 100px * $sizing-ratio;
+	    height: 100px * $sizing-ratio;
+
+	    fill: none;
+	    stroke: $border-color;
+	    stroke-miterlimit: 10;
+	    stroke-width: 8;
+	    stroke-linecap: round;
+
+	    stroke-dasharray: 190;
+	    stroke-dashoffset: 186;
+
+	    transform: translate(0, 0);
+
+	    animation-duration: 2s;
+	    animation-name: squiggle;
+	    animation-iteration-count: infinite;
+	    animation-direction: linear;
+	    animation-timing-function: linear;
+	  }
+	}
+
+	.label {
+	  position: absolute;
+	  bottom: 10px;
+	  right: 10px;
+	  padding: 4px;
+	  font-size: 12px;
+	  color: #7a7e88;
+	  font-family: sans-serif;
+	}
+
+	.label a {
+	  color: #61656f;
+	  text-decoration: none;
+	}
+
+	.label a:hover {
+	  color: #fc8899;
+	}
+}

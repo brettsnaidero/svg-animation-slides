@@ -1,0 +1,102 @@
+/**
+ * Solarized Dark theme for reveal.js.
+ * Author: Achim Staebler
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+// Solarized colors
+$base03:    #062533;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #fff;
+$base2:     #FFFFFF;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #10d1ff;
+$cyan:      #2aa198;
+$green:     #859900;
+
+// Override theme settings (see ../template/settings.scss)
+$mainFontSize: 32px;
+$mainColor: $base1;
+$headingColor: $base2;
+$headingTextShadow: none;
+$backgroundColor: $base03;
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: $magenta;
+$mainFont: 'Ubuntu', sans-serif;
+$headingFont: 'Ubuntu',  sans-serif;
+$headingTextTransform: none;
+$headingFontWeight: bold;
+$heading1Size: 2.5em;
+$heading2Size: 1.8em;
+$heading3Size: 1.45em;
+$heading4Size: 1.00em;
+//'League Gothic', Impact, sans-serif;
+
+// Theme template ------------------------------
+@import "../template/theme";
+@import "../bits/_hamburger";
+@import "../bits/_map";
+@import "../bits/_shapes";
+// ---------------------------------------------
+
+.slide-background {
+	background-image: url('../../img/topleft.svg'), url('../../img/bottomright.svg');
+	background-position: top left, bottom right !important;
+	background-size: 720px auto, 640px auto !important;
+}
+
+.reveal p a {
+	position: relative;
+
+	&:after {
+		content: '';
+		background-color: currentColor;
+		position: absolute;
+		bottom: -7px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		opacity: 0.25;
+		transition: 0.5s opacity ease;
+	}
+	&:hover:after {
+		opacity: 1;
+	}
+}
+
+.columns {
+	display: flex;
+	justify-content: center;
+}
+
+.left-col, .right-col {
+	width: 48%;
+}

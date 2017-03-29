@@ -1166,7 +1166,6 @@ body {
 .reveal .overlay .viewport {
   position: absolute;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   top: 40px;
@@ -1363,3 +1362,103 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+/* Brett */
+.reveal .svg-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #67889c;
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+  z-index: 2; }
+
+.reveal pre code {
+  padding: 10px 15px !important; }
+
+svg.star-svg {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto; }
+
+svg .star {
+  fill: rgba(0, 0, 0, 0.1);
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%; }
+
+svg .star-line1 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 20 20;
+  stroke-dashoffset: 0;
+  stroke-opacity: 1; }
+
+svg .star-line2 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 390;
+  stroke-dashoffset: 390;
+  stroke-opacity: 1;
+  -webkit-animation: offset 5s linear infinite;
+          animation: offset 5s linear infinite; }
+
+@-webkit-keyframes offset {
+  0% {
+    stroke-dashoffset: 390; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes offset {
+  0% {
+    stroke-dashoffset: 390; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+svg .star.rotate {
+  -webkit-animation: rotate 10s infinite linear;
+          animation: rotate 10s infinite linear; }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.reveal pre label {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  background: #FFF;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #282c34; }

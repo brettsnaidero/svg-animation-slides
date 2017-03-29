@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#222222;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:url(#SVGID_2_);}
+	.st3{fill:none;}
+	.st4{fill:url(#SVGID_3_);}
+	.st5{fill:#B7E38E;}
+	.st6{fill:#905417;}
+</style>
+<rect x="-1572.1" y="-1250.2" class="st0" width="20" height="20"/>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="112.25" y1="77.8643" x2="289.5833" y2="77.8643">
+		<stop  offset="0" style="stop-color:#8DC245"/>
+		<stop  offset="1" style="stop-color:#46914B"/>
+	</linearGradient>
+	<path class="st1" d="M289.6,129.1c0,0-2.8-5.3-5.3-30.8s-17.8-53.5-56.7-68.2s-85.5-3.7-115.3-5.5c0,0,5,57.5,22.7,78
+		s51.7,31.7,76,30.7S282.9,128.3,289.6,129.1z"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="125.2331" y1="161.5746" x2="474.7669" y2="511.1083">
+		<stop  offset="0" style="stop-color:#87D140"/>
+		<stop  offset="1" style="stop-color:#39AB4B"/>
+	</linearGradient>
+	<path class="st2" d="M397.3,145.1c-58,0-68.8,23.8-97.3,23.8s-39.3-23.8-97.3-23.8s-144,42.5-144,143s36,192.5,72.5,229
+		s66.8,60.5,111.5,60.5s40-7.3,57.3-7.3s12.5,7.3,57.3,7.3s75-24,111.5-60.5s72.5-128.5,72.5-229S455.3,145.1,397.3,145.1z"/>
+	<path class="st3" d="M97.3,60.5c0.1,0.5,0.2,1,0.3,1.4C97.6,61.5,97.5,61,97.3,60.5z"/>
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="112.25" y1="73.0924" x2="287.979" y2="73.0924">
+		<stop  offset="0.5" style="stop-color:#8DC245"/>
+		<stop  offset="1" style="stop-color:#46914B"/>
+	</linearGradient>
+	<path class="st4" d="M288,123.8c-1-4.4-2.4-12.2-3.7-25.5c-2.5-25.5-17.8-53.5-56.7-68.2c-38.8-14.7-85.5-3.7-115.3-5.5
+		c0,0,24,7.5,89.3,37.5C262.5,90.1,285,115.9,288,123.8z"/>
+	
+		<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -110.5045 157.9612)" class="st5" cx="135.4" cy="212.4" rx="51.2" ry="24"/>
+	<path class="st6" d="M300,159.9c2.3,0,4.4-0.2,6.4-0.5c2.3-44.6,36.6-64.5,47.5-63.9c12.2,0.7,7-41.3-31.3-3
+		c-23.5,23.5-28.9,49.9-29.6,66.8C295.2,159.7,297.5,159.9,300,159.9z"/>
+</g>
+</svg>

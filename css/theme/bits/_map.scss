@@ -1,0 +1,457 @@
+svg.map {
+	display: block;
+	height: 480px;
+	width: 450px;
+
+	/* Ground */
+	.st0 { fill: #220452; }
+	.st7 { fill: #220452; }
+	/* Water */
+	.st1 { fill: #18013d; }
+
+	/* Roads */
+	.st2, .st3, .st4 {
+		fill: none;
+		stroke: #3a1577;
+		stroke-width: 2;
+		stroke-miterlimit: 10;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.st3 {
+		stroke-width: 1;
+	}
+	.st4 {
+		stroke-width: 4;
+	}
+	/* Lines to be animated */
+	.st5, .st6, .st8 {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+	}
+
+	/* Glow */
+	.glow {
+		filter: url(#glow);
+	}
+
+	/* First Line */
+	.line1 {
+		fill:none;
+		stroke-width:4;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+		stroke-miterlimit:10;
+		stroke: #0b5bff;
+		stroke-dasharray: 313 314;
+		stroke-dashoffset: 313;
+		animation: 6s line1show infinite;
+	}
+
+	@keyframes line1show {
+		0% {
+			stroke-dashoffset: 313;
+		}
+		50% {
+			stroke-dashoffset: -313;
+		}
+		100% {
+			stroke-dashoffset: -313;
+		}
+	}
+
+	.line1-white {
+		fill:none;
+		stroke:#FFFFFF;
+		stroke-width:4;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+		stroke-miterlimit:10;
+		stroke-dasharray: 313 314;
+		stroke-dashoffset: 313;
+		animation: 6s line1show-white infinite;
+	}
+
+	@keyframes line1show-white {
+		0% {
+			stroke-dashoffset: 313;
+		}
+		10% {
+			stroke-dashoffset: 313;
+		}
+		40% {
+			stroke-dashoffset: -313;
+		}
+		100% {
+			stroke-dashoffset: -313;
+		}
+	}
+
+	/* Second Line */
+	.line2 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #ad19f3;
+		stroke-dasharray: 217 218;
+		stroke-dashoffset: 217;
+		animation: 6s line2show infinite 0.75s;
+	}
+
+	@keyframes line2show {
+		0% {
+			stroke-dashoffset: 217;
+		}
+		50% {
+			stroke-dashoffset: -217;
+		}
+		100% {
+			stroke-dashoffset: -217;
+		}
+	}
+
+	.line2-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 217 218;
+		stroke-dashoffset: 217;
+		animation: 6s line2show-white infinite 0.75s;
+	}
+
+	@keyframes line2show-white {
+		0% {
+			stroke-dashoffset: 217;
+		}
+		10% {
+			stroke-dashoffset: 217;
+		}
+		40% {
+			stroke-dashoffset: -217;
+		}
+		100% {
+			stroke-dashoffset: -217;
+		}
+	}
+
+	/* Third Line */
+	.line3 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #efb935;
+		stroke-dasharray: 301 302;
+		stroke-dashoffset: 301;
+		animation: 6s line3show infinite 1.5s;
+	}
+
+	@keyframes line3show {
+		0% {
+			stroke-dashoffset: 301;
+		}
+		50% {
+			stroke-dashoffset: -301;
+		}
+		100% {
+			stroke-dashoffset: -301;
+		}
+	}
+
+	.line3-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 301 302;
+		stroke-dashoffset: 301;
+		animation: 6s line3show-white infinite 1.5s;
+	}
+
+	@keyframes line3show-white {
+		0% {
+			stroke-dashoffset: 301;
+		}
+		10% {
+			stroke-dashoffset: 301;
+		}
+		40% {
+			stroke-dashoffset: -301;
+		}
+		100% {
+			stroke-dashoffset: -301;
+		}
+	}
+
+	/* Fourth Line */
+	.line4 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #0b5bff;
+		stroke-dasharray: 348 349;
+		stroke-dashoffset: 348;
+		animation: 6s line4show infinite 2.25s;
+	}
+
+	@keyframes line4show {
+		0% {
+			stroke-dashoffset: 348;
+		}
+		50% {
+			stroke-dashoffset: -348;
+		}
+		100% {
+			stroke-dashoffset: -348;
+		}
+	}
+
+	.line4-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 348 349;
+		stroke-dashoffset: 348;
+		animation: 6s line4show-white infinite 2.25s;
+	}
+
+	@keyframes line4show-white {
+		0% {
+			stroke-dashoffset: 348;
+		}
+		10% {
+			stroke-dashoffset: 348;
+		}
+		40% {
+			stroke-dashoffset: -348;
+		}
+		100% {
+			stroke-dashoffset: -348;
+		}
+	}
+
+	/* Fifth Line */
+	.line5 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #11ce11;
+		stroke-dasharray: 486 487;
+		stroke-dashoffset: 486;
+		animation: 6s line5show infinite 3s;
+	}
+
+	@keyframes line5show {
+		0% {
+			stroke-dashoffset: 486;
+		}
+		50% {
+			stroke-dashoffset: -486;
+		}
+		100% {
+			stroke-dashoffset: -486;
+		}
+	}
+
+	.line5-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 486 487;
+		stroke-dashoffset: 486;
+		animation: 6s line5show-white infinite 3s;
+	}
+
+	@keyframes line5show-white {
+		0% {
+			stroke-dashoffset: 486;
+		}
+		10% {
+			stroke-dashoffset: 486;
+		}
+		40% {
+			stroke-dashoffset: -486;
+		}
+		100% {
+			stroke-dashoffset: -486;
+		}
+	}
+
+	/* Seventh Line */
+	.line7 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #ad19f3;
+		stroke-dasharray: 181 182;
+		stroke-dashoffset: 181;
+		animation: 6s line7show infinite 3.75s;
+	}
+
+	@keyframes line7show {
+		0% {
+			stroke-dashoffset: 181;
+		}
+		50% {
+			stroke-dashoffset: -181;
+		}
+		100% {
+			stroke-dashoffset: -181;
+		}
+	}
+
+	.line7-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 181 182;
+		stroke-dashoffset: 181;
+		animation: 6s line7show-white infinite 3.75s;
+	}
+
+	@keyframes line7show-white {
+		0% {
+			stroke-dashoffset: 181;
+		}
+		10% {
+			stroke-dashoffset: 181;
+		}
+		40% {
+			stroke-dashoffset: -181;
+		}
+		100% {
+			stroke-dashoffset: -181;
+		}
+	}
+
+	/* Eighth Line */
+	.line8 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #efb935;
+		stroke-dasharray: 381 382;
+		stroke-dashoffset: 381;
+		animation: 6s line8show infinite 4.5s;
+	}
+
+	@keyframes line8show {
+		0% {
+			stroke-dashoffset: 381;
+		}
+		50% {
+			stroke-dashoffset: -381;
+		}
+		100% {
+			stroke-dashoffset: -381;
+		}
+	}
+
+	.line8-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 381 382;
+		stroke-dashoffset: 381;
+		animation: 6s line8show-white infinite 4.5s;
+	}
+
+	@keyframes line8show-white {
+		0% {
+			stroke-dashoffset: 381;
+		}
+		10% {
+			stroke-dashoffset: 381;
+		}
+		40% {
+			stroke-dashoffset: -381;
+		}
+		100% {
+			stroke-dashoffset: -381;
+		}
+	}
+
+	/* Ninth Line */
+	.line9 {
+		fill: none;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke: #f3191e;
+		stroke-dasharray: 430 431;
+		stroke-dashoffset: 430;
+		animation: 6s line9show infinite 5.25s;
+	}
+
+	@keyframes line9show {
+		0% {
+			stroke-dashoffset: 430;
+		}
+		50% {
+			stroke-dashoffset: -430;
+		}
+		100% {
+			stroke-dashoffset: -430;
+		}
+	}
+
+	.line9-white {
+		fill: none;
+		stroke: #FFFFFF;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 430 431;
+		stroke-dashoffset: 430;
+		animation: 6s line9show-white infinite 5.25s;
+	}
+
+	@keyframes line9show-white {
+		0% {
+			stroke-dashoffset: 430;
+		}
+		10% {
+			stroke-dashoffset: 430;
+		}
+		40% {
+			stroke-dashoffset: -430;
+		}
+		100% {
+			stroke-dashoffset: -430;
+		}
+	}
+}
