@@ -1,0 +1,117 @@
+.ac-custom {
+	max-width: 760px;
+	margin: 1em auto !important;
+
+	*,
+	*:after,
+	*::before {
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+}
+
+.ac-custom .each {
+	margin: 0 auto;
+	padding: 1em 0;
+	position: relative;
+	text-align: left;
+	font-size: 20px;
+}
+
+.ac-custom label {
+	display: inline-block;
+	position: relative;
+	font-size: 2em;
+	padding: 0 0 0 80px;
+	vertical-align: top;
+	color: rgba(255,255,255,0.8);
+	cursor: pointer;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.ac-custom label::before {
+	width: 50px;
+	height: 50px;
+	top: 50%;
+	left: 0;
+	margin-top: -25px;
+	position: absolute;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"] {
+	opacity: 0;
+	-webkit-appearance: none;
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 100;
+}
+
+.ac-custom label::before {
+	content: '';
+	border: 4px solid #5296ab;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.ac-radio label::before {
+	border-radius: 50%;
+}
+
+.ac-custom input[type="checkbox"]:checked + label,
+.ac-custom input[type="radio"]:checked + label {
+	color: #fff;
+}
+
+.ac-custom input[type="checkbox"]:checked + label::before,
+.ac-custom input[type="radio"]:checked + label::before {
+	border: 4px solid #FFFFFF;
+}
+
+/* General SVG and path styles */
+
+.ac-custom svg {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	margin-top: -20px;
+	left: 5px;
+	pointer-events: none;
+}
+
+.ac-custom svg path {
+	stroke: #eacc52;
+	stroke-width: 13px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+/* */
+.ac-radio input[type="radio"] + label svg {
+	stroke-dasharray: 499.664, 499.664;
+	stroke-dashoffset: 499.664;
+	transition: stroke-dashoffset 0.8s ease-in-out 0s;
+}
+
+.ac-radio input[type="radio"]:checked + label svg {
+	stroke-dashoffset: 0;
+}
+
+/* Tick */
+.ac-checkbox input[type="checkbox"] + label svg {
+	stroke-dasharray: 126.37, 126.37;
+	stroke-dashoffset: 126.37;
+	transition: stroke-dashoffset 0.2s ease-in-out 0s;
+}
+
+.ac-checkbox input[type="checkbox"]:checked + label svg {
+	stroke-dashoffset: 0;
+}

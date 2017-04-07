@@ -31,18 +31,40 @@
 				</section>
 
 				<!-- Slide 2: About Me -->
+				<section>
+					<h3>Me</h3>
+					<ul>
+						<li>Brett Snaidero</li>
+						<li>Designer at Internetrix</li>
+						<li>Graphic Design background</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>What we'll cover</h3>
+					<ul>
+						<li>Why?</li>
+						<li>Inline SVG</li>
+						<li>Styling SVG with CSS</li>
+						<li>SVG element attributes</li>
+						<li>Stroke/Line animation</li>
+						<li>Some fun examples</li>
+					</ul>
+				</section>
 
 				<!-- Slide 3: SVG -->
 				<section>
 					<h3>SVG: Scalable Vector Graphics</h3>
 					<div class="columns">
 						<div class="left-col">
-							<ul>
-								<li>Graphics file format &mdash; <strong><em>.svg</em></strong></li>
-								<li>Resolution independent</li>
-								<li>Created with programs like Illustrator and Sketch</li>
-								<li>May contain vector graphic shapes, bitmap (raster) images and text</li>
-							</ul>
+							<div class="fragment fade-in">
+								<ul>
+									<li>Graphics file format &mdash; <strong><em>.svg</em></strong></li>
+									<li>Resolution independent</li>
+									<li>Created with programs like Illustrator and Sketch</li>
+									<li>May contain vector graphic shapes, bitmap (raster) images and text</li>
+								</ul>
+							</div>
 						</div>
 						<div class="right-col">
 							<img class="plain" src="./img/apple.svg" style="max-width: 300px;" />
@@ -53,23 +75,24 @@
 
 				<!-- Slide 3: SVG -->
 				<section>
-					<h3>SVGs are XML based</h3>
-					<div class="svg-holder">
+					<div class="svg-holder" style="background-color: rgba(0,0,0,0.1);">
 						<svg viewbox="0 0 200 100" style="height: 300px; width: 600px;">
-							<rect x="75" y="10" width="60" height="45" fill="white" />
-							<circle cx="30" cy="55" r="30" fill="white" />
+							<rect x="75" y="10" width="60" height="45" fill="#fbc330" />
+							<circle cx="30" cy="55" r="30" fill="#10d1ff" />
 							<text x="100" y="85" font-size="20" fill="white">SVG Text</text>
 							<!-- <path fill="none" stroke="#FFF" stroke-width="5" d="M10 10 C 20 20, 40 20, 50 10" /> -->
 						</svg>
 					</div>
-<pre><label>SVG</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">&lt;svg version=&quot;1.1&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;
+					<div class="fragment fade-in">
+<pre><label>SVG</label><code data-trim="true" data-noescape="true" class="html" style="font-size: 24px; line-height: 1.4; word-wrap: break-word;">&lt;svg viewbox=&quot;0 0 200 100&quot;&gt;
   &lt;!-- Rectangle --&gt;
-  &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;blue&quot; /&gt;
+  &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
   &lt;!-- Circle --&gt;
-  &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;white&quot; /&gt;
+  &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
   &lt;!-- Text --&gt;
   &lt;text x=&quot;150&quot; y=&quot;115&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
 &lt;/svg&gt;</code></pre>
+					</div>
 				</section>
 
 				<!-- Slide 3: SVG -->
@@ -110,71 +133,244 @@
 					<p>We can put the SVG markup directly into our website as an HTML element, and it will render.</p>
 <pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">
 &lt;body&gt;
-  ...
-  &lt;svg version=&quot;1.1&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;
+
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;Your SVG can sit in your HTML!&lt;/div&gt;
+
+  &lt;!-- SVG --&gt;
+  &lt;svg viewbox=&quot;0 0 200 100&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
     &lt;!-- Rectangle --&gt;
-    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;red&quot; /&gt;
+    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
     &lt;!-- Circle --&gt;
-    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;green&quot; /&gt;
+    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
     &lt;!-- Text --&gt;
     &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
   &lt;/svg&gt;
-  ...
+
 &lt;/body&gt;</code></pre>
 				</section>
 
-				<!-- Slide 5: SVG -->
 				<section>
-					<h5>We can apply CSS to SVG elements</h5>
-					<div class="svg-holder">
-						<svg class="star-svg" x="0px" y="0px" viewBox="0 0 200 200">
-					    <!-- Paths and elements -->
-					    <path class="star" d="M102.7,48.4l15.2,30.7c0.4,0.9,1.3,1.5,2.3,1.6l33.9,4.9c2.5,0.4,3.4,3.4,1.7,5.1l-24.5,23.9
-						c-0.7,0.7-1,1.7-0.9,2.7l5.8,33.7c0.4,2.5-2.2,4.3-4.4,3.2l-30.3-15.9c-0.9-0.5-1.9-0.5-2.8,0l-30.3,15.9c-2.2,1.2-4.8-0.7-4.4-3.2
-						l5.8-33.7c0.2-1-0.2-2-0.9-2.7L44.4,90.8C42.6,89,43.6,86,46,85.7l33.9-4.9c1-0.1,1.8-0.8,2.3-1.6l15.2-30.7
-						C98.4,46.2,101.6,46.2,102.7,48.4z"/>
-					  </svg>
+					<svg viewbox="0 0 200 100" style="height: 300px; width: 600px;">
+						<!-- Rectangle -->
+						<rect x="75" y="10" width="60" height="45" fill="#fbc330" />
+						<!-- Circle -->
+						<circle cx="30" cy="55" r="30" fill="#10d1ff" />
+						<!-- Text -->
+						<text x="100" y="85" font-size="20" fill="white">SVG Text</text>
+					</svg>
+				</section>
+
+				<!-- Viewbox -->
+				<section>
+					<h3>The <code>viewBox</code> attribute defines a grid</h3>
+					<svg viewBox="0 0 10 10" style="width: 300px; display: block; margin: 0 auto; border: 3px solid #0b82b3;">
+						<!-- Grid Y -->
+				    <!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="0" x2="0" y2="10"/> -->
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="1" y1="0" x2="1" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="2" y1="0" x2="2" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="3" y1="0" x2="3" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="4" y1="0" x2="4" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="5" y1="0" x2="5" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="6" y1="0" x2="6" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="7" y1="0" x2="7" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="8" y1="0" x2="8" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="9" y1="0" x2="9" y2="10"/>
+						<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="10" y1="0" x2="10" y2="10"/> -->
+
+						<!-- Grid X -->
+						<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="0" x2="10" y2="0"/> -->
+				    <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="1" x2="10" y2="1"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="2" x2="10" y2="2"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="3" x2="10" y2="3"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="4" x2="10" y2="4"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="5" x2="10" y2="5"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="6" x2="10" y2="6"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="7" x2="10" y2="7"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="8" x2="10" y2="8"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="9" x2="10" y2="9"/>
+						<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="10" x2="10" y2="10"/> -->
+				 </svg>
+<pre><label>SVG</label><code contenteditable style="font-size: 24px; line-height: 1.4;" class="html">&lt;svg viewBox=&quot;0 0 10 10&quot;&gt;
+  &lt;!-- Elements would love to go here --&gt;
+&lt;/svg&gt;
+</code></pre>
+				</section>
+
+				<section>
+					<h3>And then we can draw elements according to that grid</h3>
+					<svg viewBox="0 0 10 10" style="width: 300px; display: block; margin: 0 auto; border: 3px solid #0b82b3;">
+						<!-- Grid Y -->
+				    <!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="0" x2="0" y2="10"/> -->
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="1" y1="0" x2="1" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="2" y1="0" x2="2" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="3" y1="0" x2="3" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="4" y1="0" x2="4" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="5" y1="0" x2="5" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="6" y1="0" x2="6" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="7" y1="0" x2="7" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="8" y1="0" x2="8" y2="10"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="9" y1="0" x2="9" y2="10"/>
+						<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="10" y1="0" x2="10" y2="10"/> -->
+
+						<!-- Grid X -->
+						<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="0" x2="10" y2="0"/> -->
+				    <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="1" x2="10" y2="1"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="2" x2="10" y2="2"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="3" x2="10" y2="3"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="4" x2="10" y2="4"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="5" x2="10" y2="5"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="6" x2="10" y2="6"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="7" x2="10" y2="7"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="8" x2="10" y2="8"/>
+						<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="9" x2="10" y2="9"/>
+						<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="10" x2="10" y2="10"/> -->
+
+						<!-- Line -->
+						<polyline style="fill: none; stroke: white; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;" class="line" points="5,2 8,5 5,8 "/>
+						<line style="fill: none; stroke: white; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;" class="line show" x1="2" y1="5" x2="8" y2="5"/>
+
+						<!-- Dots -->
+						<circle cx="5" cy="2" r="0.5" fill="#10d1ff" />
+						<circle cx="8" cy="5" r="0.5" fill="#10d1ff" />
+						<circle cx="5" cy="8" r="0.5" fill="#10d1ff" />
+						<circle cx="2" cy="5" r="0.5" fill="#10d1ff" />
+					</svg>
+<pre><label>SVG</label><code contenteditable style="font-size: 24px; line-height: 1.4;" class="html">&lt;svg viewBox=&quot;0 0 10 10&quot;&gt;
+  &lt;polyline points=&quot;2,1 8,5 2,9 &quot;/&gt;
+  &lt;line x1=&quot;2&quot; y1=&quot;5&quot; x2=&quot;8&quot; y2=&quot;5&quot;/&gt;
+&lt;/svg&gt;
+</code></pre>
+				</section>
+
+				<section>
+					<h4>Then you can easily add CSS to style and animate them!</h4>
+					<div class="directional">
+						<div class="button">
+							Next
+							<svg viewBox="0 0 10 10">
+								<!-- Grid Y -->
+						    <!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="0" x2="0" y2="10"/> -->
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="1" y1="0" x2="1" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="2" y1="0" x2="2" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="3" y1="0" x2="3" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="4" y1="0" x2="4" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="5" y1="0" x2="5" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="6" y1="0" x2="6" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="7" y1="0" x2="7" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="8" y1="0" x2="8" y2="10"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="9" y1="0" x2="9" y2="10"/>
+								<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="10" y1="0" x2="10" y2="10"/> -->
+
+								<!-- Grid X -->
+								<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="0" x2="10" y2="0"/> -->
+						    <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="1" x2="10" y2="1"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="2" x2="10" y2="2"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="3" x2="10" y2="3"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="4" x2="10" y2="4"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="5" x2="10" y2="5"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="6" x2="10" y2="6"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="7" x2="10" y2="7"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="8" x2="10" y2="8"/>
+								<line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.15;" x1="0" y1="9" x2="10" y2="9"/>
+								<!-- <line style="fill: none; stroke: #0b82b3; stroke-width: 0.1; stroke-opacity: 0.5;" x1="0" y1="10" x2="10" y2="10"/> -->
+
+								<!-- Line -->
+						    <polyline style="fill: none; stroke: white; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;" class="line" points="5,2 8,5 5,8 "/>
+								<line style="fill: none; stroke: white; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;" class="line show" x1="2" y1="5" x2="8" y2="5"/>
+							</svg>
+						</div>
 					</div>
-					<div class="columns">
-						<div class="left-col">
+				</section>
+
+				<section>
+					<h3>Or, we could just use a program to generate our SVG</h3>
+					<div>
+						<span class="fragment">
+							<img src="./img/shape.jpg" class="plain" style="height: 300px;"/>
+						</span>
+						<span class="fragment">
+							<svg viewBox="0 0 40 320" style="display: inline-block; vertical-align: top; width: 40px; height: 300px;">
+								<polyline style="fill: none; stroke: #10d1ff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" class="line" points="20,140 30,150 20,160 "/>
+								<line style="fill: none; stroke: #10d1ff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" class="line show" x1="10" y1="150" x2="30" y2="150"/>
+							</svg>
+							<img src="./img/illustrator.png" class="plain" style="height: 300px;"/>
+						</span>
+						<span class="fragment">
+							<svg viewBox="0 0 40 320" style="display: inline-block; vertical-align: top; width: 40px; height: 300px;">
+								<polyline style="fill: none; stroke: #10d1ff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" class="line" points="20,140 30,150 20,160 "/>
+								<line style="fill: none; stroke: #10d1ff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;" class="line show" x1="10" y1="150" x2="30" y2="150"/>
+							</svg>
+							<img src="./img/note.jpg" class="plain" style="height: 300px;"/>
+						</span>
+					</div>
+
+				</section>
+
+				<section>
+					<h4>SVG Optimisation Tools</h4>
+					<p><a href="https://github.com/svg/svgo">SVGO: Optimise SVG with Node</a></p>
+					<p><a href="https://jakearchibald.github.io/svgomg/">SVG Optimisation GUI (Uses SVGO)</a></p>
+					<br />
+					<h4>Minimise size and improve readability</h4>
+					<ul>
+						<li>Remove unneccessary tags</li>
+						<li>Simplify paths</li>
+						<li>Clean up attributes</li>
+					</ul>
+				</section>
+
+				<!-- Slide : Animating with CSS -->
+				<section>
+					<section>
+						<h5>We can apply CSS to SVG elements</h5>
+						<div class="svg-holder">
+							<svg class="star-svg" x="0px" y="0px" viewBox="0 0 200 200">
+						    <!-- Paths and elements -->
+						    <path class="star" d="M102.7,48.4l15.2,30.7c0.4,0.9,1.3,1.5,2.3,1.6l33.9,4.9c2.5,0.4,3.4,3.4,1.7,5.1l-24.5,23.9
+							c-0.7,0.7-1,1.7-0.9,2.7l5.8,33.7c0.4,2.5-2.2,4.3-4.4,3.2l-30.3-15.9c-0.9-0.5-1.9-0.5-2.8,0l-30.3,15.9c-2.2,1.2-4.8-0.7-4.4-3.2
+							l5.8-33.7c0.2-1-0.2-2-0.9-2.7L44.4,90.8C42.6,89,43.6,86,46,85.7l33.9-4.9c1-0.1,1.8-0.8,2.3-1.6l15.2-30.7
+							C98.4,46.2,101.6,46.2,102.7,48.4z"/>
+						  </svg>
+						</div>
+						<div class="columns">
+							<div class="left-col">
 <pre><label>HTML</label><code contenteditable style="font-size: 18px;" class="html">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;
 
   &lt;!-- Star --&gt;
   &lt;path class=&quot;star&quot; d=&quot;...&quot;/&gt;
 
 &lt;/svg&gt;</code></pre>
-						</div>
-						<div class="right-col">
+							</div>
+							<div class="right-col">
 <pre><label>CSS</label><code contenteditable style="font-size: 18px;" class="css">svg .star {
   fill: rgba(0,0,0,0.1);
   stroke: #FFF;
   stroke-width: 5;
   stroke-linecap: round;
 }</code></pre>
+							</div>
 						</div>
-					</div>
-				</section>
-
-				<!-- Slide : Animating with CSS -->
-				<section>
-					<h5>CSS Animations work on SVG elements too!</h5>
-					<div class="svg-holder">
-						<svg class="star-svg" x="0px" y="0px" viewBox="0 0 200 200">
-					    <!-- Definitions for things like gradients and masks -->
-					    <defs>
-					      <!-- Gradient -->
-					      <linearGradient id="gradient">
-					        <stop offset="0" stop-color="white" stop-opacity="0.5" />
-					        <stop offset="1" stop-color="white" stop-opacity="1" />
-					      </linearGradient>
-					    </defs>
-					    <!-- Paths and elements -->
-					    <path class="star rotate" d="M102.7,48.4l15.2,30.7c0.4,0.9,1.3,1.5,2.3,1.6l33.9,4.9c2.5,0.4,3.4,3.4,1.7,5.1l-24.5,23.9
-						c-0.7,0.7-1,1.7-0.9,2.7l5.8,33.7c0.4,2.5-2.2,4.3-4.4,3.2l-30.3-15.9c-0.9-0.5-1.9-0.5-2.8,0l-30.3,15.9c-2.2,1.2-4.8-0.7-4.4-3.2
-						l5.8-33.7c0.2-1-0.2-2-0.9-2.7L44.4,90.8C42.6,89,43.6,86,46,85.7l33.9-4.9c1-0.1,1.8-0.8,2.3-1.6l15.2-30.7
-						C98.4,46.2,101.6,46.2,102.7,48.4z"/>
-					  </svg>
-					</div>
+					</section>
+					<section>
+						<h5>CSS Animations work on SVG elements too!</h5>
+						<div class="svg-holder">
+							<svg class="star-svg" x="0px" y="0px" viewBox="0 0 200 200">
+						    <!-- Definitions for things like gradients and masks -->
+						    <defs>
+						      <!-- Gradient -->
+						      <linearGradient id="gradient">
+						        <stop offset="0" stop-color="white" stop-opacity="0.5" />
+						        <stop offset="1" stop-color="white" stop-opacity="1" />
+						      </linearGradient>
+						    </defs>
+						    <!-- Paths and elements -->
+						    <path class="star rotate" d="M102.7,48.4l15.2,30.7c0.4,0.9,1.3,1.5,2.3,1.6l33.9,4.9c2.5,0.4,3.4,3.4,1.7,5.1l-24.5,23.9
+							c-0.7,0.7-1,1.7-0.9,2.7l5.8,33.7c0.4,2.5-2.2,4.3-4.4,3.2l-30.3-15.9c-0.9-0.5-1.9-0.5-2.8,0l-30.3,15.9c-2.2,1.2-4.8-0.7-4.4-3.2
+							l5.8-33.7c0.2-1-0.2-2-0.9-2.7L44.4,90.8C42.6,89,43.6,86,46,85.7l33.9-4.9c1-0.1,1.8-0.8,2.3-1.6l15.2-30.7
+							C98.4,46.2,101.6,46.2,102.7,48.4z"/>
+						  </svg>
+						</div>
 <pre><label>SVG</label><code contenteditable style="font-size: 18px;" class="css">svg .star {
   animation: rotate 10s infinite linear;
 }
@@ -183,6 +379,7 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }</code></pre>
+					</section>
 				</section>
 
 				<!-- Line Animation -->
@@ -193,7 +390,7 @@
 
 				<section>
 					<p>Popular style of SVG animation</p>
-					<a href="http://www.polygon.com/a/xbox-one-review" title="Polygon Console Review Illustrations">
+					<a href="http://www.polygon.com/a/xbox-one-review" title="Polygon Console Review Illustrations" target="_blank">
 						<img src="./img/polygon.jpg" />
 					</a>
 					<small>Polygon Console Review Illustrations</small>
@@ -201,30 +398,66 @@
 
 				<!-- Stroke -->
 				<section>
-					<table>
-						<tr>
-							<td style="width: 48%;"><strong><code>stroke</code></strong></td>
+					<svg viewBox="0 0 100 38" style="width: 400px; margin: 0 auto 1em auto;">
+						<style type="text/css">
+							.stroke-example {
+								fill: none;
+								stroke: #FFF;
+								stroke-miterlimit: 10;
+								transition: 1s all ease;
+							}
+							.stroke-example.color {
+								stroke: #10d1ff;
+							}
+							.stroke-example.width {
+								stroke-width: 3;
+							}
+							.stroke-example.dasharray {
+								stroke-dasharray: 5 5;
+							}
+							.stroke-example.dashoffset {
+								stroke-dashoffset: -100;
+							}
+							.stroke-example.linecap {
+								stroke-linecap: round;
+							}
+							.stroke-example.linejoin {
+								stroke-linejoin: bevel;
+							}
+						</style>
+						<path id="stroke-example" class="stroke-example" d="M2,36c0,0,27.1704578-1.6990356,42.1134033-16.5762615S41.2599678-3.0873051,32.3608246,5.7726989
+	s5.9267349,23.8992672,34.1945953,23.8992672S97,11.6231441,97,11.6231441L60.2119827,6.5040045"/>
+					</svg>
+					<table style="font-size: 24px;">
+						<tr class="fragment fade-in" data-change="color">
+							<td style="width: 28%;"><strong><code>stroke</code></strong></td>
 							<td>The color of the stroke.</td>
+							<td><pre style="padding: 0; margin: 0;"><code contenteditable style="font-size: 18px; width: 100px;" class="css">blue</code></pre></td>
 						</tr>
-						<tr>
+						<tr class="fragment fade-in" data-change="width">
 							<td><strong><code>stroke-width</code></strong></td>
 							<td>The width of the stroke.</td>
+							<td><pre style="padding: 0; margin: 0;"><code contenteditable style="font-size: 18px; width: 100px;" class="css">3</code></pre></td>
 						</tr>
-						<tr>
+						<tr class="fragment fade-in" data-change="dasharray">
 							<td><strong><code>stroke-dasharray</code></strong></td>
 							<td>Define a series of strokes (eg. dashes, dots).</td>
+							<td><pre style="padding: 0; margin: 0;"><code contenteditable style="font-size: 18px; width: 100px;" class="css">10 20</code></pre></td>
 						</tr>
-						<tr>
+						<tr class="fragment fade-in" data-change="dashoffset">
 							<td><strong><code>stroke-dashoffset</code></strong></td>
 							<td>Offset the beginning of the stroke.</td>
+							<td><pre style="padding: 0; margin: 0;"><code contenteditable style="font-size: 18px; width: 100px;" class="css">20</code></pre></td>
 						</tr>
-						<tr>
+						<tr class="fragment fade-in" data-change="linecap">
 							<td><strong><code>stroke-linecap</code></strong></td>
 							<td>The shape used to cap the stroke/s.</td>
+							<td><pre style="padding: 0; margin: 0;"><code contenteditable style="font-size: 18px; width: 100px;" class="css">round</code></pre></td>
 						</tr>
-						<tr>
+						<tr class="fragment fade-in" data-change="linejoin">
 							<td><strong><code>stroke-linejoin</code></strong></td>
 							<td>The shape used to join two lines.</td>
+							<td><pre style="padding: 0; margin: 0;"><code contenteditable style="font-size: 18px; width: 100px;" class="css">bevel</code></pre></td>
 						</tr>
 					</table>
 				</section>
@@ -232,12 +465,20 @@
 				<!-- Slide : Line animation with CSS 2 -->
 				<section>
 					<h3>Animating lines using <code>stroke-dasharray</code> and <code>stroke-dashoffset</code></h3>
-					<img src="./img/array.gif">
+					<svg viewBox="0 0 100 10" style="width: 500px; margin: 1em auto 1em auto;">
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 5; stroke-dasharray: 15 10; stroke-dashoffset: 0;" />
+					</svg>
 					<p>We can use <code>stroke-dasharray</code> to define a 'dash' of stroke which is the length of the entire path.</p>
 				</section>
 
 				<section>
-					<p>We offset that dash using <code>stroke-dashoffset</code> so it is not visible on the path, and transition so the line is <em>drawn</em> back onto the path.</p>
+					<h4>You can find the length of an SVG path using Javascript</h4>
+<pre><label>JS</label><code contenteditable style="font-size: 24px; line-height: 1.6;" class="javascript">let path = document.querySelector('.star');
+let length = path.getTotalLength();</code></pre>
+				</section>
+
+				<section>
+					<p>We transition the <code>stroke-dashoffset</code> so the line is <em>drawn</em> back onto the path.</p>
 					<div class="columns">
 						<div class="left-col">
 							<div class="svg-holder">
@@ -252,13 +493,13 @@
 						</div>
 						<div class="right-col">
 <pre><label>CSS</label><code contenteditable style="font-size: 18px;" class="css">.star {
-  stroke-dasharray: 96;
+  stroke-dasharray: 390.317626953125;
   animation: draw 5s linear infinite;
 }
 
 @keyframes draw {
   0% {
-    stroke-dashoffset: 96;
+    stroke-dashoffset: 390.317626953125;
   }
   100% {
     stroke-dashoffset: 0;
@@ -1316,14 +1557,187 @@
 					<p><a href="https://tympanus.net/codrops/2015/11/12/animating-svg-menu-icon-segment/" title="Tutorial">Codrops Hamburger Icon Tutorial</a></p>
 				</section>
 
+
+				<!-- Tutorial 2 -->
 				<section>
 					<h5>Tutorial Time #2</h5>
-					<h2>Animating Directional Arrows</h2>
+					<h2>Animated Checkbox/Radio Buttons</h2>
 				</section>
 
 				<section>
-					<h5>Getting More Crazy</h5>
-					<h2>Javascript Libraries</h2>
+					<form class="ac-custom ac-radio ac-fill" autocomplete="off">
+						<div class="each">
+								<input id="r1" name="r1" type="radio">
+								<label for="r1">
+									Fancy hand-drawn radio button fill
+									<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15.833,24.334c2.179-0.443,4.766-3.995,6.545-5.359 c1.76-1.35,4.144-3.732,6.256-4.339c-3.983,3.844-6.504,9.556-10.047,13.827c-2.325,2.802-5.387,6.153-6.068,9.866 c2.081-0.474,4.484-2.502,6.425-3.488c5.708-2.897,11.316-6.804,16.608-10.418c4.812-3.287,11.13-7.53,13.935-12.905 c-0.759,3.059-3.364,6.421-4.943,9.203c-2.728,4.806-6.064,8.417-9.781,12.446c-6.895,7.477-15.107,14.109-20.779,22.608 c3.515-0.784,7.103-2.996,10.263-4.628c6.455-3.335,12.235-8.381,17.684-13.15c5.495-4.81,10.848-9.68,15.866-14.988 c1.905-2.016,4.178-4.42,5.556-6.838c0.051,1.256-0.604,2.542-1.03,3.672c-1.424,3.767-3.011,7.432-4.723,11.076 c-2.772,5.904-6.312,11.342-9.921,16.763c-3.167,4.757-7.082,8.94-10.854,13.205c-2.456,2.777-4.876,5.977-7.627,8.448 c9.341-7.52,18.965-14.629,27.924-22.656c4.995-4.474,9.557-9.075,13.586-14.446c1.443-1.924,2.427-4.939,3.74-6.56 c-0.446,3.322-2.183,6.878-3.312,10.032c-2.261,6.309-5.352,12.53-8.418,18.482c-3.46,6.719-8.134,12.698-11.954,19.203 c-0.725,1.234-1.833,2.451-2.265,3.77c2.347-0.48,4.812-3.199,7.028-4.286c4.144-2.033,7.787-4.938,11.184-8.072 c3.142-2.9,5.344-6.758,7.925-10.141c1.483-1.944,3.306-4.056,4.341-6.283c0.041,1.102-0.507,2.345-0.876,3.388 c-1.456,4.114-3.369,8.184-5.059,12.212c-1.503,3.583-3.421,7.001-5.277,10.411c-0.967,1.775-2.471,3.528-3.287,5.298 c2.49-1.163,5.229-3.906,7.212-5.828c2.094-2.028,5.027-4.716,6.33-7.335c-0.256,1.47-2.07,3.577-3.02,4.809"></path>
+									</svg>
+								</label>
+						</div>
+						<div class="each">
+								<input id="r2" name="r1" type="radio">
+								<label for="r2">
+									Another radio button
+									<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15.833,24.334c2.179-0.443,4.766-3.995,6.545-5.359 c1.76-1.35,4.144-3.732,6.256-4.339c-3.983,3.844-6.504,9.556-10.047,13.827c-2.325,2.802-5.387,6.153-6.068,9.866 c2.081-0.474,4.484-2.502,6.425-3.488c5.708-2.897,11.316-6.804,16.608-10.418c4.812-3.287,11.13-7.53,13.935-12.905 c-0.759,3.059-3.364,6.421-4.943,9.203c-2.728,4.806-6.064,8.417-9.781,12.446c-6.895,7.477-15.107,14.109-20.779,22.608 c3.515-0.784,7.103-2.996,10.263-4.628c6.455-3.335,12.235-8.381,17.684-13.15c5.495-4.81,10.848-9.68,15.866-14.988 c1.905-2.016,4.178-4.42,5.556-6.838c0.051,1.256-0.604,2.542-1.03,3.672c-1.424,3.767-3.011,7.432-4.723,11.076 c-2.772,5.904-6.312,11.342-9.921,16.763c-3.167,4.757-7.082,8.94-10.854,13.205c-2.456,2.777-4.876,5.977-7.627,8.448 c9.341-7.52,18.965-14.629,27.924-22.656c4.995-4.474,9.557-9.075,13.586-14.446c1.443-1.924,2.427-4.939,3.74-6.56 c-0.446,3.322-2.183,6.878-3.312,10.032c-2.261,6.309-5.352,12.53-8.418,18.482c-3.46,6.719-8.134,12.698-11.954,19.203 c-0.725,1.234-1.833,2.451-2.265,3.77c2.347-0.48,4.812-3.199,7.028-4.286c4.144-2.033,7.787-4.938,11.184-8.072 c3.142-2.9,5.344-6.758,7.925-10.141c1.483-1.944,3.306-4.056,4.341-6.283c0.041,1.102-0.507,2.345-0.876,3.388 c-1.456,4.114-3.369,8.184-5.059,12.212c-1.503,3.583-3.421,7.001-5.277,10.411c-0.967,1.775-2.471,3.528-3.287,5.298 c2.49-1.163,5.229-3.906,7.212-5.828c2.094-2.028,5.027-4.716,6.33-7.335c-0.256,1.47-2.07,3.577-3.02,4.809"></path>
+									</svg>
+								</label>
+						</div>
+					</form>
+					<form class="ac-custom ac-checkbox ac-checkmark" autocomplete="off">
+						<div class="each">
+								<input id="c1" name="c1" type="checkbox">
+								<label for="c1">
+									Legit hand-drawn checkbox tick
+									<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+										<path d="M16.667,62.167c3.109,5.55,7.217,10.591,10.926,15.75 c2.614,3.636,5.149,7.519,8.161,10.853c-0.046-0.051,1.959,2.414,2.692,2.343c0.895-0.088,6.958-8.511,6.014-7.3 c5.997-7.695,11.68-15.463,16.931-23.696c6.393-10.025,12.235-20.373,18.104-30.707C82.004,24.988,84.802,20.601,87,16"></path>
+									</svg>
+								</label>
+						</div>
+						<div class="each">
+								<input id="c2" name="c2" type="checkbox">
+								<label for="c2">
+									Another checkbox
+									<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+										<path d="M16.667,62.167c3.109,5.55,7.217,10.591,10.926,15.75 c2.614,3.636,5.149,7.519,8.161,10.853c-0.046-0.051,1.959,2.414,2.692,2.343c0.895-0.088,6.958-8.511,6.014-7.3 c5.997-7.695,11.68-15.463,16.931-23.696c6.393-10.025,12.235-20.373,18.104-30.707C82.004,24.988,84.802,20.601,87,16"></path>
+									</svg>
+								</label>
+						</div>
+					</form>
+				</section>
+
+				<section>
+					<h3>Our Shapes</h3>
+					<div class="columns">
+						<div class="left-col">
+							<svg style="display: block; width: 220px; margin: 0 auto;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+								<path style="fill: none; stroke: #FFF; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round;" d="M15.833,24.334c2.179-0.443,4.766-3.995,6.545-5.359 c1.76-1.35,4.144-3.732,6.256-4.339c-3.983,3.844-6.504,9.556-10.047,13.827c-2.325,2.802-5.387,6.153-6.068,9.866 c2.081-0.474,4.484-2.502,6.425-3.488c5.708-2.897,11.316-6.804,16.608-10.418c4.812-3.287,11.13-7.53,13.935-12.905 c-0.759,3.059-3.364,6.421-4.943,9.203c-2.728,4.806-6.064,8.417-9.781,12.446c-6.895,7.477-15.107,14.109-20.779,22.608 c3.515-0.784,7.103-2.996,10.263-4.628c6.455-3.335,12.235-8.381,17.684-13.15c5.495-4.81,10.848-9.68,15.866-14.988 c1.905-2.016,4.178-4.42,5.556-6.838c0.051,1.256-0.604,2.542-1.03,3.672c-1.424,3.767-3.011,7.432-4.723,11.076 c-2.772,5.904-6.312,11.342-9.921,16.763c-3.167,4.757-7.082,8.94-10.854,13.205c-2.456,2.777-4.876,5.977-7.627,8.448 c9.341-7.52,18.965-14.629,27.924-22.656c4.995-4.474,9.557-9.075,13.586-14.446c1.443-1.924,2.427-4.939,3.74-6.56 c-0.446,3.322-2.183,6.878-3.312,10.032c-2.261,6.309-5.352,12.53-8.418,18.482c-3.46,6.719-8.134,12.698-11.954,19.203 c-0.725,1.234-1.833,2.451-2.265,3.77c2.347-0.48,4.812-3.199,7.028-4.286c4.144-2.033,7.787-4.938,11.184-8.072 c3.142-2.9,5.344-6.758,7.925-10.141c1.483-1.944,3.306-4.056,4.341-6.283c0.041,1.102-0.507,2.345-0.876,3.388 c-1.456,4.114-3.369,8.184-5.059,12.212c-1.503,3.583-3.421,7.001-5.277,10.411c-0.967,1.775-2.471,3.528-3.287,5.298 c2.49-1.163,5.229-3.906,7.212-5.828c2.094-2.028,5.027-4.716,6.33-7.335c-0.256,1.47-2.07,3.577-3.02,4.809"></path>
+							</svg>
+						</div>
+						<div class="right-col">
+							<svg style="display: block; width: 220px; margin: 0 auto;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+								<path style="fill: none; stroke: #FFF; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round;" d="M16.667,62.167c3.109,5.55,7.217,10.591,10.926,15.75 c2.614,3.636,5.149,7.519,8.161,10.853c-0.046-0.051,1.959,2.414,2.692,2.343c0.895-0.088,6.958-8.511,6.014-7.3 c5.997-7.695,11.68-15.463,16.931-23.696c6.393-10.025,12.235-20.373,18.104-30.707C82.004,24.988,84.802,20.601,87,16"></path>
+							</svg>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<section>
+						<h5>Our HTML</h5>
+<pre><label>HTML</label><code contenteditable style="font-size: 20px; line-height: 1.4;" class="html">&lt;input name=&quot;tick&quot; type=&quot;checkbox&quot;&gt;
+&lt;label for=&quot;tick&quot;>
+  Legit hand-drawn checkbox tick
+  &lt;!-- SVG for tick --&gt;
+  &lt;svg viewBox=&quot;0 0 100 100&quot;&gt;
+    &lt;path d=&quot;M16.667,62.167c3.109,5.55,7.217,10.591,10.926,15.75
+    c2.614,3.636,5.149,7.519,8.161,10.853c-0.046-0.051,1.959,
+    2.414,2.692,2.343c0.895-0.088,6.958-8.511,6.014-7.3
+    c5.997-7.695,11.68-15.463,16.931-23.696c6.393-10.025,
+    12.235-20.373,18.104-30.707C82.004,24.988,84.802,20.601,
+    87,16&quot;&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/label&gt;</code></pre>
+					</section>
+					<section>
+						<h5>Visually hide the input</h5>
+<pre><label>CSS</label><code contenteditable style="font-size: 20px; line-height: 1.4;" class="css">/* Visually Hide input */
+input[type="checkbox"] {
+  opacity: 0;
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 0;
+  margin-top: -25px;
+  position: absolute;
+}</code></pre>
+					</section>
+					<section>
+						<h5>Create our fake check box</h5>
+<pre><label>CSS</label><code contenteditable style="font-size: 20px; line-height: 1.4;" class="css">/* Fake Check 'box' */
+label:before {
+  content: '';
+  border: 4px solid #5296ab;
+  transition: opacity 0.3s;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 0;
+  margin-top: -25px;
+  position: absolute;
+  cursor: pointer;
+}</code></pre>
+					</section>
+					<section>
+						<h5>Creating the 'check' animation</h5>
+<pre><label>CSS</label><code contenteditable style="font-size: 20px; line-height: 1.4;" class="css">/* Tick */
+input[type="checkbox"] + label svg {
+  stroke: orange;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 126.37, 126.37;
+  stroke-dashoffset: 126.37;
+  transition: stroke-dashoffset 0.2s ease-in-out 0s;
+}
+/* Checked - stroke offset is removed to 'draw' the tick */
+input[type="checkbox"]:checked + label svg {
+  stroke-dashoffset: 0;
+}</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<form class="ac-custom ac-checkbox ac-checkmark" autocomplete="off">
+						<div class="each">
+								<input id="tick2" name="tick2" type="checkbox">
+								<label for="tick2">
+									Legit hand-drawn checkbox tick
+									<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+										<path d="M16.667,62.167c3.109,5.55,7.217,10.591,10.926,15.75 c2.614,3.636,5.149,7.519,8.161,10.853c-0.046-0.051,1.959,2.414,2.692,2.343c0.895-0.088,6.958-8.511,6.014-7.3 c5.997-7.695,11.68-15.463,16.931-23.696c6.393-10.025,12.235-20.373,18.104-30.707C82.004,24.988,84.802,20.601,87,16"></path>
+									</svg>
+								</label>
+						</div>
+					</form>
+<pre><label>CSS</label><code contenteditable style="font-size: 20px; line-height: 1.4;" class="css">/* Tick */
+input[type="checkbox"] + label svg {
+  stroke: orange;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 126.37, 126.37;
+  stroke-dashoffset: 126.37;
+  transition: stroke-dashoffset 0.2s ease-in-out 0s;
+}
+/* Checked - stroke offset is removed to 'draw' the tick */
+input[type="checkbox"]:checked + label svg {
+  stroke-dashoffset: 0;
+}</code></pre>
+				</section>
+
+				<!-- JS -->
+				<section>
+					<h2>JS Animation Libraries</h2>
+					<ul>
+						<li><a href="https://greensock.com/gsap" title="GSAP">GSAP</a></li>
+						<li><a href="http://snapsvg.io/" title="Snap SVG">Snap SVG</a></li>
+						<li><a href="http://velocityjs.org/" title="Velocity">Velocity</a></li>
+						<li><a href="http://svgjs.com/" title="SVG JS">SVG JS</a></li>
+						<li><a href="https://bonsaijs.org/" title="Bonsai">Bonsai</a></li>
+						<li><a href="https://github.com/ConnorAtherton/walkway" title="Walkway">Walkway</a> (For drawing)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Advantages of using a JS library</h3>
+					<ul>
+						<li>Tweening and shape animation</li>
+						<li>Programmatic animation</li>
+						<li>Removes manual 'hard-coding' process</li>
+					</ul>
 				</section>
 
 			</div>
@@ -1343,8 +1757,10 @@
 			// Reveal
 			Reveal.addEventListener( 'fragmentshown', function( event ) {
 				let classNew = event.fragment.getAttribute('data-go');
-				// document.getElementById('hamburger-demo').classList = [];
 				document.getElementById('hamburger-demo').classList.add(classNew);
+
+				let classChange = event.fragment.getAttribute('data-change');
+				document.getElementById('stroke-example').classList.add(classChange);
 			} );
 			Reveal.addEventListener( 'fragmenthidden', function( event ) {
 				console.log('Hey');

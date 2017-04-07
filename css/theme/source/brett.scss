@@ -65,6 +65,8 @@ $heading4Size: 1.00em;
 @import "../bits/_hamburger";
 @import "../bits/_map";
 @import "../bits/_shapes";
+@import "../bits/_checkbox";
+@import "../bits/_directional";
 // ---------------------------------------------
 
 .slide-background {
@@ -73,7 +75,7 @@ $heading4Size: 1.00em;
 	background-size: 720px auto, 640px auto !important;
 }
 
-.reveal p a {
+.reveal p a { 
 	position: relative;
 
 	&:after {
