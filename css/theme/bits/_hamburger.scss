@@ -4,75 +4,68 @@ button.hamburger {
   outline: none;
   cursor: pointer;
   padding: 0;
-}
+  margin: 50px 0;
 
-button.hamburger:hover .line {
-  stroke: #284b60;
-}
+  svg {
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
 
-button.hamburger {
-	padding: 100px 0;
+  .line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 
-	svg {
-	  display: block;
-	  width: 120px;
-	  height: 120px;
-	}
+  /* Hamburger */
+  .line.cross {
+    transition: 0.25s stroke-dasharray ease 0.25s,
+      0.25s stroke-dashoffset ease 0.25s,
+      0.25s stroke ease 0s;
+  }
 
-	.line {
-	  fill: none;
-	  stroke: #fff;
-	  stroke-linecap: round;
-	  stroke-linejoin: round;
-	  stroke-miterlimit: 10;
-	}
+  .line.top {
+    transition: 0.5s stroke-dasharray ease 0s,
+      0.5s stroke-dashoffset ease 0s,
+      0.25s stroke ease 0s;
+  }
 
-	/* Hamburger */
-	.line {
-	  transition: 0.25s stroke-dasharray ease 0s,
-	    0.25s stroke-dashoffset ease 0s,
-	    0.25s transform ease 0.25s,
-	    0.25s stroke ease 0s;
-	}
+  .line.bottom {
+    transition: 0.5s stroke-dasharray ease 0.25s,
+      0.5s stroke-dashoffset ease 0.25s,
+      0.25s stroke ease 0s;
+  }
 
-	.line.top,
-	.line.bottom {
-	  stroke-dasharray: 5.92 17;
-	  stroke-dashoffset: -10.4;
-	}
+  .line.top,
+  .line.bottom {
+    stroke-dasharray: 50 600;
+    stroke-dashoffset: 0;
+  }
 
-	.line.top {
-		// transform-origin: 50% 50%;
-	  transform: translateY(1.5px);
-	}
+  .line.cross {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 50 60;
+  }
 
-	.line.bottom {
-	  transform: translateY(-1.5px);
-	}
+  /* Cross */
+  &.on .line.cross {
+    transition: 0.25s stroke-dasharray ease 0s,
+      0.25s stroke-dashoffset ease 0s,
+      0.25s stroke ease 0s;
+  }
 
-	.line.cross {
-	  stroke-dashoffset: 0;
-	  stroke-dasharray: 5.9 8;
-	}
+  &.on .line.top,
+  &.on .line.bottom {
+    stroke-dasharray: 70.71 600;
+    stroke-dashoffset: -392;
+  }
 
-	/* Cross */
-	&.on .line {
-	  transition: 0.25s stroke-dasharray ease 0.25s,
-	    0.25s stroke-dashoffset ease 0.25s,
-	    0.25s transform ease 0s,
-	    0.25s stroke ease 0s;
-	}
-
-	&.on .line.top,
-	&.on .line.bottom {
-	  stroke-dasharray: 8.3;
-	  stroke-dashoffset: 0;
-	  transform: translateY(0px);
-	}
-
-	&.on .line.cross {
-	  stroke-dashoffset: 5.9;
-	}
+  &.on .line.cross {
+    stroke-dashoffset: 51;
+  }
 }
 
 button.hamburger.notanimated {
@@ -118,82 +111,55 @@ button.hamburger.bigslow:hover .line {
 	height: 220px;
 	margin: 0 auto;
 
-	.line {
-		fill: none;
-		stroke: white;
-		stroke-width: 1;
-		stroke-linecap: round;
-		transition: 0.5s all ease;
-	}
-	.line.top {
-		stroke-dasharray: 10 20;
-    stroke-dashoffset: -17;
-	}
-	.line.bottom {
-		stroke-dasharray: 10 20;
-    stroke-dashoffset: -17;
-	}
-	.line.cross {
-		stroke-dasharray: 6;
-    stroke-dashoffset: 6;
-	}
+  .line {
+    fill: none;
+    stroke: #FFF;
+    stroke-linecap: round;
+    stroke-width: 5;
+    transition: 1s all ease;
+  }
+
 	.rail {
 		fill: none;
 		stroke: white;
-		stroke-width: 0.1;
-		stroke-dasharray: 0.5;
+		stroke-width: 1;
+		// stroke-dasharray: 10;
 		stroke-linecap: round;
 		stroke-opacity: 0.5;
 	}
 
+  .line.top,
+  .line.bottom {
+    stroke-dasharray: 463.25274658203125;
+    stroke-dashoffset: 463.25274658203125;
+  }
+
+  .line.cross {
+    stroke-dashoffset: 60;
+    stroke-dasharray: 50 60;
+  }
+
 	&.one {
-		.line.top {
-			stroke-dasharray: 6 20;
-			stroke-dashoffset: -10.5;
-		}
-		.line.bottom {
-			stroke-dasharray: 6 20;
-			stroke-dashoffset: -10.5;
-		}
-		.line.cross {
-			stroke-dasharray: 6;
-    	stroke-dashoffset: 0;
-		}
+    .line.top,
+    .line.bottom {
+      stroke-dasharray: 50 600;
+      stroke-dashoffset: 0;
+    }
+
+    .line.cross {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 50 60;
+    }
 	}
 	&.two {
-		.line.top {
-		  transform: translateY(1.5px);
-		}
-		.line.bottom {
-		  transform: translateY(-1.5px);
-		}
-	}
-	&.three {
-		.line.top {
-		  transform: translateY(0px);
-			stroke-dasharray: 8.3 20;
-			stroke-dashoffset: 0;
-			transition: 1s stroke-dasharray ease 1s,
-		    1s stroke-dashoffset ease 1s,
-		    1s transform ease 0s,
-		    1s stroke ease 1s;
-		}
-		.line.bottom {
-		  transform: translateY(0px);
-			stroke-dasharray: 8.3 20;
-			stroke-dashoffset: 0;
-			transition: 1s stroke-dasharray ease 1s,
-		    1s stroke-dashoffset ease 1s,
-		    1s transform ease 0s,
-		    1s stroke ease 1s;
-		}
-		.line.cross {
-			stroke-dasharray: 6;
-    	stroke-dashoffset: 6;
-			transition: 1s stroke-dasharray ease 1s,
-		    1s stroke-dashoffset ease 1s,
-		    1s transform ease 0s,
-		    1s stroke ease 1s;
-		}
+    .line.top,
+    .line.bottom {
+      stroke-dasharray: 70.71 600;
+      stroke-dashoffset: -392;
+    }
+
+    .line.cross {
+      stroke-dashoffset: 51;
+    }
 	}
 }

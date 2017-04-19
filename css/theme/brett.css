@@ -300,47 +300,41 @@ button.hamburger {
   background: transparent;
   outline: none;
   cursor: pointer;
-  padding: 0; }
-
-button.hamburger:hover .line {
-  stroke: #284b60; }
-
-button.hamburger {
-  padding: 100px 0;
+  padding: 0;
+  margin: 50px 0;
   /* Hamburger */
   /* Cross */ }
   button.hamburger svg {
     display: block;
-    width: 120px;
-    height: 120px; }
+    width: 200px;
+    height: 200px; }
   button.hamburger .line {
     fill: none;
     stroke: #fff;
+    stroke-width: 6;
     stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10; }
-  button.hamburger .line {
-    transition: 0.25s stroke-dasharray ease 0s, 0.25s stroke-dashoffset ease 0s, 0.25s transform ease 0.25s, 0.25s stroke ease 0s; }
+    stroke-linejoin: round; }
+  button.hamburger .line.cross {
+    transition: 0.25s stroke-dasharray ease 0.25s, 0.25s stroke-dashoffset ease 0.25s, 0.25s stroke ease 0s; }
+  button.hamburger .line.top {
+    transition: 0.5s stroke-dasharray ease 0s, 0.5s stroke-dashoffset ease 0s, 0.25s stroke ease 0s; }
+  button.hamburger .line.bottom {
+    transition: 0.5s stroke-dasharray ease 0.25s, 0.5s stroke-dashoffset ease 0.25s, 0.25s stroke ease 0s; }
   button.hamburger .line.top,
   button.hamburger .line.bottom {
-    stroke-dasharray: 5.92 17;
-    stroke-dashoffset: -10.4; }
-  button.hamburger .line.top {
-    transform: translateY(1.5px); }
-  button.hamburger .line.bottom {
-    transform: translateY(-1.5px); }
+    stroke-dasharray: 50 600;
+    stroke-dashoffset: 0; }
   button.hamburger .line.cross {
     stroke-dashoffset: 0;
-    stroke-dasharray: 5.9 8; }
-  button.hamburger.on .line {
-    transition: 0.25s stroke-dasharray ease 0.25s, 0.25s stroke-dashoffset ease 0.25s, 0.25s transform ease 0s, 0.25s stroke ease 0s; }
+    stroke-dasharray: 50 60; }
+  button.hamburger.on .line.cross {
+    transition: 0.25s stroke-dasharray ease 0s, 0.25s stroke-dashoffset ease 0s, 0.25s stroke ease 0s; }
   button.hamburger.on .line.top,
   button.hamburger.on .line.bottom {
-    stroke-dasharray: 8.3;
-    stroke-dashoffset: 0;
-    transform: translateY(0px); }
+    stroke-dasharray: 70.71 600;
+    stroke-dashoffset: -392; }
   button.hamburger.on .line.cross {
-    stroke-dashoffset: 5.9; }
+    stroke-dashoffset: 51; }
 
 button.hamburger.notanimated .line {
   stroke-dashoffset: 0 !important;
@@ -370,53 +364,36 @@ button.hamburger.bigslow:hover .line {
   margin: 0 auto; }
   #hamburger-demo .line {
     fill: none;
-    stroke: white;
-    stroke-width: 1;
+    stroke: #FFF;
     stroke-linecap: round;
-    transition: 0.5s all ease; }
-  #hamburger-demo .line.top {
-    stroke-dasharray: 10 20;
-    stroke-dashoffset: -17; }
-  #hamburger-demo .line.bottom {
-    stroke-dasharray: 10 20;
-    stroke-dashoffset: -17; }
-  #hamburger-demo .line.cross {
-    stroke-dasharray: 6;
-    stroke-dashoffset: 6; }
+    stroke-width: 5;
+    transition: 1s all ease; }
   #hamburger-demo .rail {
     fill: none;
     stroke: white;
-    stroke-width: 0.1;
-    stroke-dasharray: 0.5;
+    stroke-width: 1;
     stroke-linecap: round;
     stroke-opacity: 0.5; }
-  #hamburger-demo.one .line.top {
-    stroke-dasharray: 6 20;
-    stroke-dashoffset: -10.5; }
+  #hamburger-demo .line.top,
+  #hamburger-demo .line.bottom {
+    stroke-dasharray: 463.25274658203125;
+    stroke-dashoffset: 463.25274658203125; }
+  #hamburger-demo .line.cross {
+    stroke-dashoffset: 60;
+    stroke-dasharray: 50 60; }
+  #hamburger-demo.one .line.top,
   #hamburger-demo.one .line.bottom {
-    stroke-dasharray: 6 20;
-    stroke-dashoffset: -10.5; }
-  #hamburger-demo.one .line.cross {
-    stroke-dasharray: 6;
+    stroke-dasharray: 50 600;
     stroke-dashoffset: 0; }
-  #hamburger-demo.two .line.top {
-    transform: translateY(1.5px); }
+  #hamburger-demo.one .line.cross {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 50 60; }
+  #hamburger-demo.two .line.top,
   #hamburger-demo.two .line.bottom {
-    transform: translateY(-1.5px); }
-  #hamburger-demo.three .line.top {
-    transform: translateY(0px);
-    stroke-dasharray: 8.3 20;
-    stroke-dashoffset: 0;
-    transition: 1s stroke-dasharray ease 1s, 1s stroke-dashoffset ease 1s, 1s transform ease 0s, 1s stroke ease 1s; }
-  #hamburger-demo.three .line.bottom {
-    transform: translateY(0px);
-    stroke-dasharray: 8.3 20;
-    stroke-dashoffset: 0;
-    transition: 1s stroke-dasharray ease 1s, 1s stroke-dashoffset ease 1s, 1s transform ease 0s, 1s stroke ease 1s; }
-  #hamburger-demo.three .line.cross {
-    stroke-dasharray: 6;
-    stroke-dashoffset: 6;
-    transition: 1s stroke-dasharray ease 1s, 1s stroke-dashoffset ease 1s, 1s transform ease 0s, 1s stroke ease 1s; }
+    stroke-dasharray: 70.71 600;
+    stroke-dashoffset: -392; }
+  #hamburger-demo.two .line.cross {
+    stroke-dashoffset: 51; }
 
 svg.map {
   display: block;
