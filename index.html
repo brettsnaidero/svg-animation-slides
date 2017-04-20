@@ -430,12 +430,12 @@ stroke-linecap: round;
 					  </svg>
 					</div>
 <pre><label>SVG</label><code contenteditable style="font-size: 18px;" class="css">svg .star {
-animation: rotate 10s infinite linear;
+  animation: rotate 10s infinite linear;
 }
 
 @keyframes rotate {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }</code></pre>
 
 					<aside class="notes">
@@ -454,9 +454,8 @@ animation: rotate 10s infinite linear;
 				</section>
 
 				<section>
-					<p>Popular style of SVG animation</p>
 					<a href="http://www.polygon.com/a/xbox-one-review" title="Polygon Console Review Illustrations" target="_blank">
-						<img src="./img/polygon.jpg" />
+						<img src="./img/polygon.gif" alt="Polygon Line Animation" />
 					</a>
 					<small>Polygon Console Review Illustrations</small>
 
@@ -482,7 +481,7 @@ animation: rotate 10s infinite linear;
 								stroke-width: 3;
 							}
 							.stroke-example.dasharray {
-								stroke-dasharray: 5 5;
+								stroke-dasharray: 10 10;
 							}
 							.stroke-example.dashoffset {
 								stroke-dashoffset: -100;
@@ -537,11 +536,11 @@ animation: rotate 10s infinite linear;
 
 				<!-- Slide : Line animation with CSS 2 -->
 				<section>
-					<h3>Animating lines using <code>stroke-dasharray</code> and <code>stroke-dashoffset</code></h3>
-					<svg viewBox="0 0 100 10" style="width: 500px; margin: 1em auto 1em auto;">
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 5; stroke-dasharray: 15 10; stroke-dashoffset: 0;" />
+					<p>The <strong><code>stroke-dasharray</code></strong> attribute controls the pattern of dashes and gaps used to stroke paths.</p>
+					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2; stroke-dasharray: 10; stroke-dashoffset: 0;" />
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
 					</svg>
-					<p>We can use <code>stroke-dasharray</code> to define a 'dash' of stroke which is the length of the entire path.</p>
 
 					<aside class="notes">
 
@@ -549,17 +548,32 @@ animation: rotate 10s infinite linear;
 				</section>
 
 				<section>
-					<h4>You can find the length of an SVG path using Javascript</h4>
-<pre><label>JS</label><code contenteditable style="font-size: 24px; line-height: 1.6;" class="javascript">let path = document.querySelector('.star');
-let length = path.getTotalLength();</code></pre>
-
-					<aside class="notes">
-
-					</aside>
+					<h3>Animating lines using <code>stroke-dasharray</code> and <code>stroke-dashoffset</code></h3>
+					<p>1. We use <code>stroke-dasharray</code> to define a 'dash' which is the length of the entire path.</p>
+					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2; stroke-dasharray: 90; stroke-dashoffset: 0;" />
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
+					</svg>
+					<p>2. We use <code>stroke-dashoffset</code> to move our dash until it's no longer visible.</p>
+					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
+						<style>
+							.moveme {
+								animation: 5s moveline linear infinite;
+								stroke: white; stroke-width: 2; stroke-dasharray: 90; stroke-dashoffset: 0;
+							}
+							@keyframes moveline {
+								to {
+									stroke-dashoffset: 90;
+								}
+							}
+						</style>
+						<line class="moveme" x1="5" y1="5" x2="95" y2="5" />
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
+					</svg>
 				</section>
 
 				<section>
-					<p>We transition the <code>stroke-dashoffset</code> so the line is <em>drawn</em> back onto the path.</p>
+					<p><em>Then</em>, we can transition the <code>stroke-dashoffset</code> so the line is <em>drawn</em> back onto the path.</p>
 					<div class="columns">
 						<div class="left-col">
 							<div class="svg-holder">
@@ -589,6 +603,17 @@ let length = path.getTotalLength();</code></pre>
 						</div>
 					</div>
 
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<img style="max-width: 600px; margin: 0 auto 20px auto;" src="./img/gettotallength.gif" alt="Get Total Length" />
+					<h3>Need help finding the line length?</h3>
+					<p>You can find the exact length of an SVG path using a little bit of Javascript - with the <strong>getTotalLength</strong> method</p>
+<pre><label>JS</label><code contenteditable style="font-size: 24px; line-height: 1.6;" class="javascript">let path = document.querySelector('.star');
+let length = path.getTotalLength();</code></pre>
 					<aside class="notes">
 
 					</aside>
@@ -1531,7 +1556,52 @@ let length = path.getTotalLength();</code></pre>
 				</section>
 
 				<section>
-					<h2>But SVG line animation can be a very useful technique for easily adding style to common website elements</h2>
+					<svg viewBox="0 0 100 100" style="width: 200px; height: 200px; margin: 0 auto;">
+						<style>
+							.circle {
+								animation: 8s loader ease infinite alternate,  2s loader2 linear infinite;
+								stroke: url(#Gradient);
+								stroke-linecap: round;
+								stroke-width: 5;
+								stroke-dasharray: 94.0955352783 94.0955352783;
+								stroke-dashoffset: 0;
+								transform-origin:
+							}
+							@keyframes loader {
+								0% {
+									stroke-dasharray: 84.0955352783 104.0955352783;
+									/*opacity: 0.25;*/
+								}
+								100% {
+									stroke-dasharray: 178.19107055664062 10;
+									/*opacity: 1;*/
+								}
+							}
+							@keyframes loader2 {
+								0% {
+									stroke-dashoffset: 0;
+								}
+								100% {
+									stroke-dashoffset: -188.19107055664062;
+								}
+							}
+						</style>
+						<defs>
+							<linearGradient id="Gradient" x1="50%" y1="0%" x2="50%" y2="100%" >
+
+			            <stop offset="0%" stop-color="#7A5FFF">
+			                <animate attributeName="stop-color" values="#7A5FFF; #01FF89; #7A5FFF" dur="4s" repeatCount="indefinite"></animate>
+			            </stop>
+
+			            <stop offset="100%" stop-color="#01FF89">
+			                <animate attributeName="stop-color" values="#01FF89; #7A5FFF; #01FF89" dur="4s" repeatCount="indefinite"></animate>
+			            </stop>
+
+			        </linearGradient>
+						</defs>
+						<circle class="circle" cx="50" cy="50" r="30" fill="none"></circle>
+					</svg>
+					<p>But SVG line animation can be a very <strong>useful</strong> technique for easily adding style to common website elements</p>
 
 					<aside class="notes">
 
@@ -1551,7 +1621,7 @@ let length = path.getTotalLength();</code></pre>
 						  </svg>
 						</button>
 					</div>
-					<h2>Making An Animated Hamburger Menu Icon With SVG + CSS</h2>
+					<h3>Making an Animated Hamburger Menu Icon with SVG + CSS</h3>
 
 					<aside class="notes">
 
