@@ -1462,3 +1462,36 @@ svg .star.rotate {
   border-radius: 5px;
   padding: 0 10px;
   color: #282c34; }
+
+/* Button */
+.button {
+  width: auto;
+  height: 54px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFF;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  line-height: 54px;
+  font-size: 20px;
+  padding: 0 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin: 20px auto 0 auto; }
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.2); }
+
+/* Lists */
+.reveal ul li {
+  margin: 10px 0; }
+
+.sub {
+  color: #c0ccd1;
+  font-size: 16px;
+  margin-top: 0; }
+
+.reveal h1 .unem, .reveal h2 .unem, .reveal h3 .unem, .reveal h4 .unem, .reveal h5 .unem, .reveal h6 .unem, .reveal p .unem {
+  font-weight: normal; }

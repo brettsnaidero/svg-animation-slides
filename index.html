@@ -26,11 +26,15 @@
 			<div class="slides">
 				<!-- Slide 1: Introduction -->
 				<section>
-					<h2>Fun (and useful) <br>SVG Animations With CSS</h2>
-					<p>by the esteemed Brett Snaidero</p>
+					<h2>Fun <span class="unem">(and useful)</span> <br>SVG Animation With CSS</h2>
+					<div class="sub">Web Directions Respond 2017</div>
+					<br>
+					<h3><span class="unem">by</span> Brett Snaidero</h3>
+					<p><a href="https://twitter.com/brettsnaidero" title="Twitter">@brettsnaidero</a> : Twitter&nbsp;&nbsp;<span class="unem">|</span>&nbsp;&nbsp;<a href="http://codepen.io/brettsnaidero/" title="Codepen">@brettsnaidero</a> : Codepen</p>
 
 					<aside class="notes">
-Hi everyone, my name is Brett Snaidero, and I'm really excited because I'm going to be talking to you a bit about something that I am really passionate about, which is SVG.
+Hi everyone, my name is Brett Snaidero.<br>
+I'm really excited because I'm going to be talking to you a bit about something that I am really passionate about, which is SVG.
 					</aside>
 				</section>
 
@@ -38,18 +42,24 @@ Hi everyone, my name is Brett Snaidero, and I'm really excited because I'm going
 				<section>
 					<div class="columns">
 						<div class="left-col">
-							<img style="max-width: 300px; margin: 0 auto;" src="./img/profile.jpg" alt="Me!" />
+							<img style="max-width: 300px; margin: 0 auto; border-radius: 50%;" src="./img/profile.jpg" alt="Me!" />
 						</div>
 						<div class="right-col">
-							<h4 style="text-align: left;">Brett Snaidero</h4>
-							<p style="text-align: left;">Interactive Designer at Internetrix</p>
-							<p style="text-align: left;">Primarily work as a web designer - design and front end</p>
-							<p style="text-align: left;">Graphic Design background</p>
+							<!-- <h4 style="text-align: left;">Brett Snaidero</h4> -->
+							<p style="text-align: left; margin-top: 0;">Interactive Designer at <a href="http://www.internetrix.com.au/" title="Internetrix Website">Internetrix</a></p>
+							<p class="fragment" style="text-align: left;">Primarily work as a web designer - design and front end</p>
+							<p class="fragment" style="text-align: left;">Graphic Design background</p>
+							<p class="fragment" style="text-align: left;">Quite fond of HTML and CSS</p>
 						</div>
 					</div>
 
 					<aside class="notes">
-I work at Internetrix, a digital agency based in Wollongong, as an Interactive Designer. I come from a design background, I have a creative arts degree (pause for laughter), but I also love HTML and CSS - I'm obsessed with the process of writing markup, and the possibilities open to us as designers and developers. It makes sense that I'm a huge fan of SVG, as it kind of marries some of the things that my graphics programs like Photoshop and Sketch, with the world of markup - they're a declarative way to 'write' graphics.
+						Background:<br>
+I work at Internetrix, a digital agency based in Wollongong, as an Interactive Designer.<br>
+I come from a graphic design background, that's what I studied at University, but I also love HTML and CSS -<br>
+I'm obsessed with the process of writing markup, and the possibilities open to us as designers and developers.<br>
+It makes sense that I'm a huge fan of SVG, as it kind of marries my knowledge of programs like Photoshop and Sketch, with the world of markup -<br>
+they're a declarative way to 'write' graphics.
 					</aside>
 				</section>
 
@@ -57,15 +67,17 @@ I work at Internetrix, a digital agency based in Wollongong, as an Interactive D
 					<h3>What we'll cover</h3>
 					<ul>
 						<li>What is SVG?</li>
-						<li>Inline SVG</li>
-						<li>SVG elements and attributes</li>
-						<li>Styling SVG with CSS</li>
-						<li>Stroke/Line animation</li>
-						<li>Some fun examples</li>
+						<li class="fragment">Inline SVG</li>
+						<li class="fragment">SVG elements and attributes</li>
+						<li class="fragment">Styling SVG with CSS</li>
+						<li class="fragment">Stroke/Line animation</li>
+						<li class="fragment">Some fun examples</li>
 					</ul>
 
 					<aside class="notes">
-So what are we going to cover today? I'm going to give you a quick intro on SVG, then we're going to chat about how we can embed SVG in our webpages, and how we can style them with CSS. Then we'll go over one way we can animate SVG elements, and I have a some quick tutorials and a few cool examples to show you.
+So what are we going to cover today?<br>
+I'm going to give you a quick intro on SVG, then we're going to chat about how we can embed SVG in our webpages, and how we can style them with CSS.<br>
+Then we'll go over one way we can animate SVG elements, and I have a some quick tutorials and a few cool examples to show you.
 					</aside>
 				</section>
 
@@ -88,7 +100,9 @@ So what are we going to cover today? I'm going to give you a quick intro on SVG,
 					<!-- <img src="./img/illustrator.png" style="max-width: 200px;" /> -->
 
 					<aside class="notes">
-I'm sure many of you are using SVG in your projects - hands up if you've used SVG before? They're great right? I'm not going to try to evangelise SVG too much, because I'm competitive and I don't really need you all to be making cooler stuff than me... but they can be an incredibly useful addition to your front-end toolkit, and if you're reluctant to use them, I think I'm going to try and convince you that they're really useful and really easy. Rather than talking about complex animation, today I want to focus on the kind of humdrum things we do in every project, and how SVG with a dash of CSS can liven them up and open up some new possibilities for us as designers and developers.
+I'm sure many of you are using SVG in your projects - hands up if you've used SVG before?<br>
+They're great right? I'm not going to try to evangelise SVG too much, because I'm competitive and I don't really need you all to be making cooler stuff than me... but they can be an incredibly useful addition to your front-end toolkit, and if you're reluctant to use them, I think I'm going to try and convince you that they're really useful and really easy.<br>
+Rather than talking about complex animation, today I want to focus on the kind of humdrum things we do in every project, and how SVG with a dash of CSS can liven them up and open up some new possibilities for us as designers and developers.<br>
 ------
 Just a quick intro for those of you who aren't super familiar with SVG - it is a file format - specifically it is a vector graphics format (vector meaning resolution independent) which can be created in any respectable vector graphics editing program (Illustrator / Sketch).
 					</aside>
@@ -106,27 +120,28 @@ Just a quick intro for those of you who aren't super familiar with SVG - it is a
 					</div>
 <pre><label>SVG</label><code data-trim="true" data-noescape="true" class="html" style="font-size: 24px; line-height: 1.4; word-wrap: break-word;">&lt;svg viewbox=&quot;0 0 200 100&quot;&gt;
   &lt;!-- Rectangle --&gt;
-  &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
+  &lt;rect x=&quot;75&quot; y=&quot;10&quot; width=&quot;60&quot; height=&quot;45&quot; fill=&quot;orange&quot; /&gt;
   &lt;!-- Circle --&gt;
-  &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
+  &lt;circle cx=&quot;30&quot; cy=&quot;55&quot; r=&quot;30&quot; fill=&quot;blue&quot; /&gt;
   &lt;!-- Text --&gt;
-  &lt;text x=&quot;150&quot; y=&quot;115&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
+  &lt;text x=&quot;150&quot; y=&quot;115&quot; font-size=&quot;20&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
 &lt;/svg&gt;</code></pre>
 
 					<aside class="notes">
-						So this is an SVG, being rendered in the browser.
+						So this is an SVG, being rendered in the browser.<br>
+						If you compare the markup to the rendering, it's pretty easy to get a basic grip on what the markup is doing - like here we have the rectangle element, with some attributes defining it's size, position and colour - and up top we can see that rectangle.
 					</aside>
 				</section>
 
 				<!-- Slide 3: SVG -->
 				<section>
-					<h3>SVGs are XML based</h3>
-					<p>Made up of tags, much like HTML, which define the 'structure' of the document.</p>
+					<h3>SVG and HTML: Long lost siblings</h3>
+					<p>SVG is made up of tags, just like HTML, which define the 'structure' of the document.</p>
 					<hr>
 					<div class="columns">
 						<div class="left-col">
 							<h6>HTML Tags</h6>
-<pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">&lt;body&gt;
+<pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word; font-size: 24px; line-height: 1.4;">&lt;body&gt;
 &lt;div&gt;
 &lt;header&gt;
 &lt;footer&gt;
@@ -137,7 +152,7 @@ Just a quick intro for those of you who aren't super familiar with SVG - it is a
 						</div>
 						<div class="right-col">
 							<h6>SVG Tags</h6>
-<pre><label>SVG</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">&lt;circle /&gt;
+<pre><label>SVG</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word; font-size: 24px; line-height: 1.4;">&lt;circle /&gt;
 &lt;ellipse /&gt;
 &lt;line /&gt;
 &lt;polygon /&gt;
@@ -147,57 +162,13 @@ Just a quick intro for those of you who aren't super familiar with SVG - it is a
 &lt;text /&gt;</code></pre>
 						</div>
 					</div>
-					<small><a href="http://callmenick.com/post/getting-started-inline-svg">SVG Elements Reference</a></small>
 
 					<aside class="notes">
-You can read an SVG file just like you can read the markup in a HTML page - each tag defines an element, and each tag can have attributes providing more information about it. Most of the tag names's in SVG are a specific type of shape or path. So a <circle> makes a circle appear, an <ellipse> makes a fancy circle appear, a <line> is a straight line between 2 points, and so on.
-
-Of all these vector shape and line elements, the <path> element is the most powerful, in that it can be used to create each of the other elements - circles, irregular shapes, curves - but the syntax is fairly complicated, whereas the other elements offer us a simplified syntax which we can usually read and edit quite easily.
-					</aside>
-				</section>
-
-				<!-- Slide 4: SVG -->
-				<section>
-					<h3>Embedding SVG 'inline' in HTML</h3>
-					<p>We can put the SVG markup directly into our website as an HTML element, and it will render.</p>
-<pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">
-&lt;body&gt;
-
-  &lt;!-- HTML --&gt;
-  &lt;div&gt;Your SVG can sit in your HTML!&lt;/div&gt;
-
-  &lt;!-- SVG --&gt;
-  &lt;svg viewbox=&quot;0 0 200 100&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
-    &lt;!-- Rectangle --&gt;
-    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
-    &lt;!-- Circle --&gt;
-    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
-    &lt;!-- Text --&gt;
-    &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
-  &lt;/svg&gt;
-
-&lt;/body&gt;</code></pre>
-
-					<aside class="notes">
-There are actually seven ways to embed SVG on a webpage, but I'm just going to be talking about what I would say is the simplest way to include SVG on your website, which is by embedding the SVG code directly in the HTML, or 'inline SVG'.
-
-For those of you who are fairly new to SVG, this might blow your mind, but you can just drop the markup for an SVG graphic into your HTML page, and it will display!
-					</aside>
-				</section>
-
-				<section>
-					<svg viewbox="0 0 200 100" style="height: 300px; width: 600px;">
-						<!-- Rectangle -->
-						<rect x="75" y="10" width="60" height="45" fill="#fbc330" />
-						<!-- Circle -->
-						<circle cx="30" cy="55" r="30" fill="#10d1ff" />
-						<!-- Text -->
-						<text x="100" y="85" font-size="20" fill="white">SVG Text</text>
-					</svg>
-
-					<aside class="notes">
-OPEN INSPECTOR ---
-And this also gives us complete access to the elements inside the graphic - you can interact with the elements using Javascript and CSS, with very few limitations. If you open up your browser's inspector you're going to see that all the tags are accessible in the DOM, available for us to play with.
+You can read an SVG file just like you can read the markup in a HTML page - each tag defines an element, and each tag can have attributes providing more information about the element.<br>
+Most of the tag names's in SVG are a specific type of shape or path. So a <circle> makes a circle appear, an <ellipse> makes a fancy circle appear, a <line> is a straight line between 2 points, and so on.<br>
+------<br>
+Of all these vector shape and line elements, the <path> element is kind of the grandmother, in that it can be used to create each of the other elements - circles, irregular shapes, curves -<br>
+but the syntax is fairly complicated, whereas the other elements offer us a simplified syntax which we can usually read and edit quite easily.
 					</aside>
 				</section>
 
@@ -281,8 +252,9 @@ SVG can look daunting, if you're looking at the code that's being exported by Il
 						<circle cx="2" cy="5" r="0.5" fill="#10d1ff" />
 					</svg>
 <pre><label>SVG</label><code contenteditable style="font-size: 24px; line-height: 1.4;" class="html">&lt;svg viewBox=&quot;0 0 10 10&quot;&gt;
-  &lt;polyline points=&quot;2,1 8,5 2,9 &quot;/&gt;
-  &lt;line x1=&quot;2&quot; y1=&quot;5&quot; x2=&quot;8&quot; y2=&quot;5&quot;/&gt;
+  &lt;line x1=&quot;2&quot; y1=&quot;5&quot; x2=&quot;8&quot; y2=&quot;5&quot; /&gt;
+  <!-- Each element has it's own attributes -->
+  &lt;polyline points=&quot;2,1 8,5 2,9&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
 					<aside class="notes">
@@ -291,6 +263,51 @@ And the syntax for the simple SVG elements can be really easy to read and write.
 So it can be easy for us to draw simple elements, without ever opening a graphics program. I find it really useful to have the ability to draw triangles and arrows without having to leave the HTML/CSS for the page I'm working on.
 					</aside>
 				</section>
+
+				<!-- Slide 4: SVG -->
+				<section>
+					<h3>Embedding SVG 'inline' in HTML</h3>
+					<p>We can put the SVG markup directly into our website as an HTML element, and it will render.</p>
+<pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">
+&lt;body&gt;
+
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;Your SVG can sit in your HTML!&lt;/div&gt;
+
+  &lt;!-- SVG --&gt;
+  &lt;svg viewbox=&quot;0 0 200 100&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
+    &lt;!-- Rectangle --&gt;
+    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
+    &lt;!-- Circle --&gt;
+    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
+    &lt;!-- Text --&gt;
+    &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
+  &lt;/svg&gt;
+
+&lt;/body&gt;</code></pre>
+
+					<aside class="notes">
+There are actually seven ways to embed SVG on a webpage, but I'm just going to be talking about what I would say is the simplest way to include SVG on your website, which is by embedding the SVG code directly in the HTML, or 'inline SVG'.<br>
+For those of you who are fairly new to SVG, this might blow your mind, but you can just drop the markup for an SVG graphic into your HTML page, and it will display!
+					</aside>
+				</section>
+
+				<section>
+					<svg viewbox="0 0 200 100" style="height: 300px; width: 600px;">
+						<!-- Rectangle -->
+						<rect x="75" y="10" width="60" height="45" fill="#fbc330" />
+						<!-- Circle -->
+						<circle cx="30" cy="55" r="30" fill="#10d1ff" />
+						<!-- Text -->
+						<text x="100" y="85" font-size="20" fill="white">SVG Text</text>
+					</svg>
+
+					<aside class="notes">
+OPEN INSPECTOR ---<br>
+And this also gives us complete access to the elements inside the graphic - you can interact with the elements using Javascript and CSS, with very few limitations. If you open up your browser's inspector you're going to see that all the tags are accessible in the DOM, available for us to play with.
+					</aside>
+				</section>
+
 				<!--
 				<section>
 					<h4>Then you can easily add CSS to style and animate them!</h4>
@@ -360,9 +377,12 @@ Of course, for more complicated shapes, there are various programs and tools for
 
 				<section>
 					<h4>SVG Optimisation Tools</h4>
-					<p><a href="https://github.com/svg/svgo">SVGO: Optimise SVG with Node</a></p>
-					<p><a href="https://jakearchibald.github.io/svgomg/">SVG Optimisation GUI (Uses SVGO)</a></p>
-					<br />
+					<div style="max-width: 680px; margin: 0 auto;">
+						<img src="img/svgo.svg" alt="SVGO Logo" class="plain" style="background: none; width: 110px; float: right; margin: 0px;" />
+						<p><a href="https://github.com/svg/svgo">SVGO: Optimise SVG with Node</a></p>
+						<p><a href="https://jakearchibald.github.io/svgomg/">SVG Optimisation GUI (Uses SVGO)</a></p>
+					</div>
+					<br style="clear: both;" />
 					<h4>Minimise size and improve readability</h4>
 					<ul>
 						<li>Remove unneccessary tags</li>
@@ -391,17 +411,17 @@ Of course, for more complicated shapes, there are various programs and tools for
 						<div class="left-col">
 <pre><label>HTML</label><code contenteditable style="font-size: 18px;" class="html">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;
 
-&lt;!-- Star --&gt;
-&lt;path class=&quot;star&quot; d=&quot;...&quot;/&gt;
+  &lt;!-- Star --&gt;
+  &lt;path class=&quot;star&quot; d=&quot;...&quot;/&gt;
 
 &lt;/svg&gt;</code></pre>
 						</div>
 						<div class="right-col">
 <pre><label>CSS</label><code contenteditable style="font-size: 18px;" class="css">svg .star {
-fill: rgba(0,0,0,0.1);
-stroke: #FFF;
-stroke-width: 5;
-stroke-linecap: round;
+  fill: rgba(0,0,0,0.1);
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
 }</code></pre>
 						</div>
 					</div>
@@ -573,6 +593,17 @@ stroke-linecap: round;
 				</section>
 
 				<section>
+					<img style="max-width: 600px; margin: 0 auto 20px auto;" src="./img/gettotallength.gif" alt="Get Total Length" />
+					<h3>Need help finding the line length?</h3>
+					<p>You can find the exact length of an SVG path using a little bit of Javascript - with the <strong>getTotalLength</strong> method</p>
+<pre><label>JS</label><code contenteditable style="font-size: 24px; line-height: 1.6;" class="javascript">let path = document.querySelector('.star');
+let length = path.getTotalLength();</code></pre>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
 					<p><em>Then</em>, we can transition the <code>stroke-dashoffset</code> so the line is <em>drawn</em> back onto the path.</p>
 					<div class="columns">
 						<div class="left-col">
@@ -588,13 +619,13 @@ stroke-linecap: round;
 						</div>
 						<div class="right-col">
 <pre><label>CSS</label><code contenteditable style="font-size: 18px;" class="css">.star {
-  stroke-dasharray: 390.317626953125;
+  stroke-dasharray: 390;
   animation: draw 5s linear infinite;
 }
-
+/* Line length = 390 */
 @keyframes draw {
   0% {
-    stroke-dashoffset: 390.317626953125;
+    stroke-dashoffset: 390;
   }
   100% {
     stroke-dashoffset: 0;
@@ -603,17 +634,6 @@ stroke-linecap: round;
 						</div>
 					</div>
 
-					<aside class="notes">
-
-					</aside>
-				</section>
-
-				<section>
-					<img style="max-width: 600px; margin: 0 auto 20px auto;" src="./img/gettotallength.gif" alt="Get Total Length" />
-					<h3>Need help finding the line length?</h3>
-					<p>You can find the exact length of an SVG path using a little bit of Javascript - with the <strong>getTotalLength</strong> method</p>
-<pre><label>JS</label><code contenteditable style="font-size: 24px; line-height: 1.6;" class="javascript">let path = document.querySelector('.star');
-let length = path.getTotalLength();</code></pre>
 					<aside class="notes">
 
 					</aside>
@@ -1629,7 +1649,11 @@ let length = path.getTotalLength();</code></pre>
 				</section>
 
 				<section>
-					<p>1. We start by creating the 'rails' on which our lines will travel.</p>
+					<img src="img/hamburger-each.svg" alt="Hamburger Rails" class="plain" style="width: 400px; margin: 0 auto; background: transparent;" />
+					<p>We start by creating the 'rails' on which our lines will travel.</p>
+				</section>
+
+				<section>
 					<svg style="width: 300px;" viewBox="0 0 120 120">
 						<style type="text/css">
 							.rail-this{fill:none;stroke:#fff;stroke-miterlimit:10;opacity:0.25;}
@@ -1730,14 +1754,9 @@ let length = path.getTotalLength();</code></pre>
 					  </svg>
 					</div>
 					<div style="position: relative;">
-						<div class="fragment fade-in" style="position: absolute; top: 0; left: 0; width: 100%;">
-							<div class="fragment fade-out">
-
-							</div>
-						</div>
 						<div class="fragment fade-in" data-go="one" style="position: absolute; top: 0; left: 0; width: 100%;">
 							<div class="fragment fade-out">
-								<p>2. We then define the <code>stroke-dasharray</code> and <code>stroke-dashoffset</code> to create the hamburger icon.</p>
+								<p>We then define the <code>stroke-dasharray</code> and <code>stroke-dashoffset</code> to create the hamburger icon.</p>
 <pre><label>CSS</label><code contenteditable style="font-size: 18px;" class="css">.top, .bottom {
   stroke-dasharray: 5.92 17;
   stroke-dashoffset: -10.4;
@@ -1750,7 +1769,7 @@ let length = path.getTotalLength();</code></pre>
 						</div>
 						<div class="fragment fade-in" data-go="two" style="position: absolute; top: 0; left: 0; width: 100%;">
 							<div class="fragment fade-out">
-								<p>3. Then, we work out the 'active' state, where the lines form the cross.</p>
+								<p>Then, we work out the 'active' state, where the lines form the cross.</p>
 <pre><label>CSS</label><code contenteditable style="font-size: 18px;" class="css">.active .top,
 .active .bottom {
   stroke-dasharray: 8.3;
@@ -2051,10 +2070,11 @@ input[type="checkbox"]:checked + label svg {
 				<section>
 					<h3>Advantages of using a JS library</h3>
 					<ul>
-						<li>Simplify chaining animations</li>
-						<li>Programmatic animation</li>
-						<li>Tweening and shape animation</li>
-						<li>Removes manual 'hard-coding' of values</li>
+						<li>Browser consistency</li>
+						<li class="fragment">Simplify chaining animations</li>
+						<li class="fragment">Programmatic animation</li>
+						<li class="fragment">Tweening and shape animation</li>
+						<li class="fragment">Removes manual 'hard-coding' of values</li>
 					</ul>
 
 					<aside class="notes">
@@ -2081,7 +2101,7 @@ input[type="checkbox"]:checked + label svg {
 						}
 						</style>
 					</div>
-					<button id="show-velocity">Show animation</button>
+					<button class="button" id="show-velocity" title="Play">Show Animation</button>
 <pre><label>JS</label><code contenteditable style="font-size: 20px; line-height: 1.4;" class="js">$("#rect")
   .delay(500)
   .velocity({ x: "+=200", y: "25%" })
@@ -2099,10 +2119,23 @@ input[type="checkbox"]:checked + label svg {
 					<h3>In Conclusion</h3>
 					<ul>
 						<li>SVG are a great 'supplement' to HTML/CSS</li>
-						<li>Inline SVG can be styled with CSS</li>
-						<li>Inline SVG can be animated/transitioned with CSS</li>
-						<li>Animating stroke on SVG can give you a new way to style common elements</li>
+						<li class="fragment">Inline SVG can be styled with CSS</li>
+						<li class="fragment">Inline SVG can be animated/transitioned with CSS</li>
+						<li class="fragment">Animating stroke on SVG can give you a new way to style common elements</li>
 					</ul>
+
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<h4>The Slides</h4>
+					<p><a href="https://github.com/brettsnaidero/svg-animation-slides" title="Slides">Slides on Github</a></p>
+					<br>
+					<h4>The Demos</h4>
+					<p><a href="http://codepen.io/brettsnaidero/pen/zwvorr" title="Hamburger Icon">SVG Animated Hamburger Icon</a></p>
+					<p><a href="https://codepen.io/brettsnaidero/pen/rmjjgN" title="Checkboxes and Radio Buttons">SVG Hand Drawn Checkboxes and Radio Buttons</a></p>
 
 					<aside class="notes">
 
