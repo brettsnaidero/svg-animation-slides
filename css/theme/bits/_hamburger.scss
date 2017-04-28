@@ -23,20 +23,17 @@ button.hamburger {
   /* Hamburger */
   .line.cross {
     transition: 0.25s stroke-dasharray ease 0.25s,
-      0.25s stroke-dashoffset ease 0.25s,
-      0.25s stroke ease 0s;
-  }
+      0.25s stroke-dashoffset ease 0.25s;
+  } 
 
   .line.top {
     transition: 0.5s stroke-dasharray ease 0s,
-      0.5s stroke-dashoffset ease 0s,
-      0.25s stroke ease 0s;
+      0.5s stroke-dashoffset ease 0s;
   }
 
   .line.bottom {
     transition: 0.5s stroke-dasharray ease 0.25s,
-      0.5s stroke-dashoffset ease 0.25s,
-      0.25s stroke ease 0s;
+      0.5s stroke-dashoffset ease 0.25s;
   }
 
   .line.top,
@@ -53,8 +50,7 @@ button.hamburger {
   /* Cross */
   &.on .line.cross {
     transition: 0.25s stroke-dasharray ease 0s,
-      0.25s stroke-dashoffset ease 0s,
-      0.25s stroke ease 0s;
+      0.25s stroke-dashoffset ease 0s;
   }
 
   &.on .line.top,

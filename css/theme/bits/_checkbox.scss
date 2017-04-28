@@ -96,8 +96,8 @@
 
 /* */
 .ac-radio input[type="radio"] + label svg {
-	stroke-dasharray: 499.664, 499.664;
-	stroke-dashoffset: 499.664;
+	stroke-dasharray: 490 600;
+	stroke-dashoffset: 491;
 	transition: stroke-dashoffset 0.8s ease-in-out 0s;
 }
 
@@ -107,8 +107,8 @@
 
 /* Tick */
 .ac-checkbox input[type="checkbox"] + label svg {
-	stroke-dasharray: 126.37, 126.37;
-	stroke-dashoffset: 126.37;
+	stroke-dasharray: 100 200;
+	stroke-dashoffset: 101;
 	transition: stroke-dashoffset 0.2s ease-in-out 0s;
 }
 
