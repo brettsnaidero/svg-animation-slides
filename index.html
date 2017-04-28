@@ -125,7 +125,9 @@ Just a quick intro for those of you who aren't super familiar with SVG - it is a
   &lt;!-- Circle --&gt;
   &lt;circle cx=&quot;30&quot; cy=&quot;55&quot; r=&quot;30&quot; fill=&quot;blue&quot; /&gt;
   &lt;!-- Text --&gt;
-  &lt;text x=&quot;150&quot; y=&quot;115&quot; font-size=&quot;20&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
+  &lt;text x=&quot;100&quot; y=&quot;85&quot; font-size=&quot;20&quot; fill=&quot;white&quot;&gt;
+    SVG Text
+  &lt;/text&gt;
 &lt;/svg&gt;</code></pre>
 
 					<aside class="notes">
@@ -1805,7 +1807,7 @@ So again, we play with the stroke-dasharray and stroke-dashoffset settings to cr
 				</section>
 
 				<section>
-					<div class="svg-holder">
+					<div class="svg-holder" style="margin-top: 0;">
 						<button class="hamburger">
 						  <svg viewBox="0 0 120 120">
 						    <g>
@@ -1818,16 +1820,20 @@ So again, we play with the stroke-dasharray and stroke-dashoffset settings to cr
 					</div>
 <pre><label>CSS</label><code style="font-size: 18px;" class="css">/* Hamburger */
 .line.top {
-  transition: 0.5s stroke-dasharray ease 0s, 0.5s stroke-dashoffset ease 0s; }
+  transition: 0.5s stroke-dasharray ease 0s, 0.5s stroke-dashoffset ease 0s;
+}
 
 .line.bottom {
-  transition: 0.5s stroke-dasharray ease 0.25s, 0.5s stroke-dashoffset ease 0.25s; }
+  transition: 0.5s stroke-dasharray ease 0.25s, 0.5s stroke-dashoffset ease 0.25s;
+}
 
 .line.middle {
-  transition: 0.25s stroke-dasharray ease 0.25s, 0.25s stroke-dashoffset ease 0.25s; }
+  transition: 0.25s stroke-dasharray ease 0.25s, 0.25s stroke-dashoffset ease 0.25s;
+}
 
 .active .line.middle {
-  transition: 0.25s stroke-dasharray ease 0s,  0.25s stroke-dashoffset ease 0s; }</code></pre>
+  transition: 0.25s stroke-dasharray ease 0s,  0.25s stroke-dashoffset ease 0s;
+}</code></pre>
 
 					<aside class="notes">
 Then, those two states: hamburger and cross - can be animated between using a simple class toggle.<br>
