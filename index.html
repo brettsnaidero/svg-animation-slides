@@ -248,6 +248,10 @@ The 'viewbox' attribute is really all you need on an inlined <svg> tag, and this
 						<polyline style="fill: none; stroke: white; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;" class="line" points="5,2 8,5 5,8 "/>
 						<line style="fill: none; stroke: white; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;" class="line show" x1="2" y1="5" x2="8" y2="5"/>
 
+						<!-- Text -->
+						<text class="fragment" x="2" y="4" font-size="0.8" fill="white">2,5</text>
+						<text class="fragment" x="8" y="4" font-size="0.8" fill="white">8,5</text>
+
 						<!-- Dots -->
 						<circle cx="5" cy="2" r="0.5" fill="#10d1ff" />
 						<circle cx="8" cy="5" r="0.5" fill="#10d1ff" />
@@ -257,7 +261,7 @@ The 'viewbox' attribute is really all you need on an inlined <svg> tag, and this
 <pre><label>SVG</label><code style="font-size: 24px; line-height: 1.4;" class="html">&lt;svg viewBox=&quot;0 0 10 10&quot;&gt;
   &lt;line x1=&quot;2&quot; y1=&quot;5&quot; x2=&quot;8&quot; y2=&quot;5&quot; /&gt;
   <!-- Each element has it's own attributes -->
-  &lt;polyline points=&quot;2,1 8,5 2,9&quot; /&gt;
+  &lt;polyline points=&quot;5,2 8,5 5,8&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
 					<aside class="notes">
