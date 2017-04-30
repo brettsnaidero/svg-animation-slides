@@ -175,6 +175,50 @@ but the syntax is fairly complicated, whereas the other elements offer us a simp
 					</aside>
 				</section>
 
+				<!-- Slide 4: SVG -->
+				<section>
+					<h3>Embedding SVG 'inline' in HTML</h3>
+					<p>We can put the SVG markup directly into our website as an HTML element, and it will render.</p>
+<pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">
+&lt;body&gt;
+
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;Your SVG can sit in your HTML!&lt;/div&gt;
+
+  &lt;!-- SVG --&gt;
+  &lt;svg viewbox=&quot;0 0 200 100&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
+    &lt;!-- Rectangle --&gt;
+    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
+    &lt;!-- Circle --&gt;
+    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
+    &lt;!-- Text --&gt;
+    &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
+  &lt;/svg&gt;
+
+&lt;/body&gt;</code></pre>
+
+					<aside class="notes">
+There are actually seven ways to embed SVG on a webpage, but I'm just going to be talking about what I would say is the simplest way to include SVG on your website, which is by embedding the SVG code directly in the HTML, or 'inline SVG'.<br>
+For those of you who are fairly new to SVG, this might blow your mind, but you can just drop the markup for an SVG graphic into your HTML page, and it will display!
+					</aside>
+				</section>
+
+				<section>
+					<svg viewbox="0 0 200 100" style="height: 300px; width: 600px;">
+						<!-- Rectangle -->
+						<rect x="75" y="10" width="60" height="45" fill="#fbc330" />
+						<!-- Circle -->
+						<circle cx="30" cy="55" r="30" fill="#10d1ff" />
+						<!-- Text -->
+						<text x="100" y="85" font-size="20" fill="white">SVG Text</text>
+					</svg>
+
+					<aside class="notes">
+OPEN INSPECTOR ---<br>
+And this also gives us complete access to the elements inside the graphic - you can interact with the elements using Javascript and CSS, with very few limitations. If you open up your browser's inspector you're going to see that all the tags are accessible in the DOM, available for us to play with.
+					</aside>
+				</section>
+
 				<!-- Viewbox -->
 				<section>
 					<h3>The <code>viewBox</code> attribute defines a grid</h3>
@@ -269,50 +313,6 @@ The 'viewbox' attribute is really all you need on an inlined <svg> tag, and this
 					<aside class="notes">
 And the syntax for most SVG elements is really easy to read and write. For example, the polyline element is just a series of grid coordinates, which draws a line between each of these points.<br>
 So it can be easy for us to draw simple elements, without ever opening a graphics program. I find it really useful to have the ability to draw triangles and arrows without having to leave the HTML/CSS for the page I'm working on.
-					</aside>
-				</section>
-
-				<!-- Slide 4: SVG -->
-				<section>
-					<h3>Embedding SVG 'inline' in HTML</h3>
-					<p>We can put the SVG markup directly into our website as an HTML element, and it will render.</p>
-<pre><label>HTML</label><code data-trim="true" data-noescape="true" class="html" style="word-wrap: break-word;">
-&lt;body&gt;
-
-  &lt;!-- HTML --&gt;
-  &lt;div&gt;Your SVG can sit in your HTML!&lt;/div&gt;
-
-  &lt;!-- SVG --&gt;
-  &lt;svg viewbox=&quot;0 0 200 100&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
-    &lt;!-- Rectangle --&gt;
-    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
-    &lt;!-- Circle --&gt;
-    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
-    &lt;!-- Text --&gt;
-    &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
-  &lt;/svg&gt;
-
-&lt;/body&gt;</code></pre>
-
-					<aside class="notes">
-There are actually seven ways to embed SVG on a webpage, but I'm just going to be talking about what I would say is the simplest way to include SVG on your website, which is by embedding the SVG code directly in the HTML, or 'inline SVG'.<br>
-For those of you who are fairly new to SVG, this might blow your mind, but you can just drop the markup for an SVG graphic into your HTML page, and it will display!
-					</aside>
-				</section>
-
-				<section>
-					<svg viewbox="0 0 200 100" style="height: 300px; width: 600px;">
-						<!-- Rectangle -->
-						<rect x="75" y="10" width="60" height="45" fill="#fbc330" />
-						<!-- Circle -->
-						<circle cx="30" cy="55" r="30" fill="#10d1ff" />
-						<!-- Text -->
-						<text x="100" y="85" font-size="20" fill="white">SVG Text</text>
-					</svg>
-
-					<aside class="notes">
-OPEN INSPECTOR ---<br>
-And this also gives us complete access to the elements inside the graphic - you can interact with the elements using Javascript and CSS, with very few limitations. If you open up your browser's inspector you're going to see that all the tags are accessible in the DOM, available for us to play with.
 					</aside>
 				</section>
 
