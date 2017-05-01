@@ -577,22 +577,26 @@ So I mentioned you can style the stroke on an SVG element - you actually have a 
 				</section>
 
 				<section>
-					<h3>Animating lines using <code>stroke-dasharray</code> and <code>stroke-dashoffset</code></h3>
-					<p>1. We use <code>stroke-dasharray</code> to define a 'dash' which is the length of the entire path.</p>
+					<h3 style="margin-bottom: 40px;">Animating lines with <br><code>stroke-dasharray</code> + <code>stroke-dashoffset</code></h3>
+					<p>We use <strong><code>stroke-dasharray</code></strong> to define a 'dash'<br>which is the length of the entire path.</p>
 					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2px; stroke-dasharray: 90px; stroke-dashoffset: 0px;" />
+						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-linecap: round; stroke-width: 2px; stroke-dasharray: 90px; stroke-dashoffset: 0px;" />
 						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1px;" />
 					</svg>
-					<p>2. We use <code>stroke-dashoffset</code> to move our dash until it's no longer visible.</p>
+					<p>Then, we use <strong><code>stroke-dashoffset</code></strong> to move our dash<br>until it's no longer visible.</p>
 					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
 						<style>
 							.moveme {
-								animation: 5s moveline linear infinite;
-								stroke: white; stroke-width: 2px; stroke-dasharray: 90px; stroke-dashoffset: 0px;
+								animation: 5s moveline ease-in-out infinite;
+								stroke: white;
+								stroke-width: 2px;
+								stroke-dasharray: 90px 100px;
+								stroke-dashoffset: 0px;
+								stroke-linecap: round;
 							}
 							@keyframes moveline {
 								to {
-									stroke-dashoffset: 90px;
+									stroke-dashoffset: 91px;
 								}
 							}
 						</style>
