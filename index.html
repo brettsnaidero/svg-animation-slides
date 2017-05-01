@@ -188,11 +188,11 @@ but the syntax is fairly complicated, whereas the other elements offer us a simp
   &lt;!-- SVG --&gt;
   &lt;svg viewbox=&quot;0 0 200 100&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
     &lt;!-- Rectangle --&gt;
-    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;orange&quot; /&gt;
+    &lt;rect x=&quot;75&quot; y=&quot;10&quot; width=&quot;60&quot; height=&quot;45&quot; fill=&quot;orange&quot; /&gt;
     &lt;!-- Circle --&gt;
-    &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;blue&quot; /&gt;
+    &lt;circle cx=&quot;30&quot; cy=&quot;55&quot; r=&quot;30&quot; fill=&quot;blue&quot; /&gt;
     &lt;!-- Text --&gt;
-    &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
+    &lt;text x=&quot;100&quot; y=&quot;85&quot; font-size=&quot;20&quot; fill=&quot;white&quot;&gt;SVG Text&lt;/text&gt;
   &lt;/svg&gt;
 
 &lt;/body&gt;</code></pre>
@@ -543,10 +543,51 @@ So I mentioned you can style the stroke on an SVG element - you actually have a 
 				<!-- Slide : Line animation with CSS 2 -->
 				<section>
 					<p>The <strong><code>stroke-dasharray</code></strong> attribute controls the pattern of dashes and gaps used to stroke paths.</p>
-					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2; stroke-dasharray: 10; stroke-dashoffset: 0;" />
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
-					</svg>
+
+					<br>
+
+					<span>
+						<table style="font-size: 24px;">
+							<tr>
+								<td style="width: 50%;"><strong><code>stroke-dasharray</code></strong></td>
+								<td><pre style="padding: 0; margin: 0;"><code style="font-size: 18px;" class="css">10</code></pre></td>
+							</tr>
+						</table>
+						<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
+							<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2; stroke-dasharray: 10; stroke-dashoffset: 0;" />
+							<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
+						</svg>
+					</span>
+
+					<br><br>
+
+					<span class="fragment">
+						<table style="font-size: 24px;">
+							<tr>
+								<td style="width: 50%;"><strong><code>stroke-dasharray</code></strong></td>
+								<td><pre style="padding: 0; margin: 0;"><code style="font-size: 18px;" class="css">10 20</code></pre></td>
+							</tr>
+						</table>
+						<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
+							<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2; stroke-dasharray: 10 20; stroke-dashoffset: 0;" />
+							<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
+						</svg>
+					</span>
+
+					<br><br>
+
+					<span class="fragment">
+						<table style="font-size: 24px;">
+							<tr>
+								<td style="width: 50%;"><strong><code>stroke-dasharray</code></strong></td>
+								<td><pre style="padding: 0; margin: 0;"><code style="font-size: 18px;" class="css">10 20 5</code></pre></td>
+							</tr>
+						</table>
+						<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
+							<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2; stroke-dasharray: 10 20 5; stroke-dashoffset: 0;" />
+							<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1;" />
+						</svg>
+					</span>
 
 					<aside class="notes">
 --- Inspector Time ---
