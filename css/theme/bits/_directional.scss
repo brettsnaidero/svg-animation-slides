@@ -27,7 +27,7 @@
 	svg .line {
 	  fill: none;
 	  stroke: #000;
-	  stroke-width: 5;
+	  stroke-width: 5px;
 	  stroke-linecap: round;
 	}
 
@@ -41,12 +41,12 @@
 	}
 
 	svg .show {
-	  stroke-dasharray: 22 24;
-	  stroke-dashoffset: -22;
+	  stroke-dasharray: 22px 24px;
+	  stroke-dashoffset: -22px;
 	  transition: 0.5s all ease;
 	}
 
 	.button:hover svg .show {
-	  stroke-dashoffset: 0;
+	  stroke-dashoffset: 0px;
 	}
 }

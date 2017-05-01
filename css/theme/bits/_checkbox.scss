@@ -75,7 +75,6 @@
 }
 
 /* General SVG and path styles */
-
 .ac-custom svg {
 	position: absolute;
 	width: 40px;
@@ -95,23 +94,23 @@
 }
 
 /* */
-.ac-radio input[type="radio"] + label svg {
-	stroke-dasharray: 490 600;
-	stroke-dashoffset: 491;
+.ac-radio input[type="radio"] + label svg path {
+	stroke-dasharray: 490px 600px;
+	stroke-dashoffset: 491px;
 	transition: stroke-dashoffset 0.8s ease-in-out 0s;
 }
 
-.ac-radio input[type="radio"]:checked + label svg {
-	stroke-dashoffset: 0;
+.ac-radio input[type="radio"]:checked + label svg path {
+	stroke-dashoffset: 0px;
 }
 
 /* Tick */
-.ac-checkbox input[type="checkbox"] + label svg {
-	stroke-dasharray: 100 200;
-	stroke-dashoffset: 101;
+.ac-checkbox input[type="checkbox"] + label svg path {
+	stroke-dasharray: 100px 200px;
+	stroke-dashoffset: 101px;
 	transition: stroke-dashoffset 0.2s ease-in-out 0s;
 }
 
-.ac-checkbox input[type="checkbox"]:checked + label svg {
-	stroke-dashoffset: 0;
+.ac-checkbox input[type="checkbox"]:checked + label svg path {
+	stroke-dashoffset: 0px;
 }

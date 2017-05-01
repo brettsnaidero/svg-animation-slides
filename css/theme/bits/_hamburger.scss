@@ -15,7 +15,7 @@ button.hamburger {
   .line {
     fill: none;
     stroke: #fff;
-    stroke-width: 6;
+    stroke-width: 6px;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
@@ -24,7 +24,7 @@ button.hamburger {
   .line.cross {
     transition: 0.25s stroke-dasharray ease 0.25s,
       0.25s stroke-dashoffset ease 0.25s;
-  } 
+  }
 
   .line.top {
     transition: 0.5s stroke-dasharray ease 0s,
@@ -38,13 +38,13 @@ button.hamburger {
 
   .line.top,
   .line.bottom {
-    stroke-dasharray: 50 600;
-    stroke-dashoffset: 0;
+    stroke-dasharray: 50px 600px;
+    stroke-dashoffset: 0px;
   }
 
   .line.cross {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 50 60;
+    stroke-dashoffset: 0px;
+    stroke-dasharray: 50px 60px;
   }
 
   /* Cross */
@@ -55,12 +55,12 @@ button.hamburger {
 
   &.on .line.top,
   &.on .line.bottom {
-    stroke-dasharray: 70.71 600;
-    stroke-dashoffset: -392;
+    stroke-dasharray: 70.71px 600px;
+    stroke-dashoffset: -392px;
   }
 
   &.on .line.cross {
-    stroke-dashoffset: 51;
+    stroke-dashoffset: 51px;
   }
 }
 
@@ -111,14 +111,14 @@ button.hamburger.bigslow:hover .line {
     fill: none;
     stroke: #FFF;
     stroke-linecap: round;
-    stroke-width: 5;
+    stroke-width: 5px;
     transition: 1s all ease;
   }
 
 	.rail {
 		fill: none;
 		stroke: white;
-		stroke-width: 1;
+		stroke-width: 1px;
 		// stroke-dasharray: 10;
 		stroke-linecap: round;
 		stroke-opacity: 0.5;
@@ -126,36 +126,36 @@ button.hamburger.bigslow:hover .line {
 
   .line.top,
   .line.bottom {
-    stroke-dasharray: 463.25274658203125;
-    stroke-dashoffset: 463.25274658203125;
+    stroke-dasharray: 463.25274658203125px;
+    stroke-dashoffset: 463.25274658203125px;
   }
 
   .line.cross {
-    stroke-dashoffset: 60;
-    stroke-dasharray: 50 60;
+    stroke-dashoffset: 60px;
+    stroke-dasharray: 50px 60px;
   }
 
 	&.one {
     .line.top,
     .line.bottom {
-      stroke-dasharray: 50 600;
-      stroke-dashoffset: 0;
+      stroke-dasharray: 50px 600px;
+      stroke-dashoffset: 0px;
     }
 
     .line.cross {
-      stroke-dashoffset: 0;
-      stroke-dasharray: 50 60;
+      stroke-dashoffset: 0px;
+      stroke-dasharray: 50px 60px;
     }
 	}
 	&.two {
     .line.top,
     .line.bottom {
-      stroke-dasharray: 70.71 600;
-      stroke-dashoffset: -392;
+      stroke-dasharray: 70.71px 600px;
+      stroke-dashoffset: -392px;
     }
 
     .line.cross {
-      stroke-dashoffset: 51;
+      stroke-dashoffset: 51px;
     }
 	}
 }
