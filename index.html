@@ -1844,22 +1844,18 @@ So again, we play with the stroke-dasharray and stroke-dashoffset settings to cr
 						  </svg>
 						</button>
 					</div>
-<pre><label>CSS</label><code style="font-size: 18px;" class="css">/* Hamburger */
+<pre><label>CSS</label><code style="font-size: 16px;" class="css">/* Hamburger */
 .line.top {
-  transition: 0.5s stroke-dasharray ease 0s, 0.5s stroke-dashoffset ease 0s;
-}
+  transition: 0.5s stroke-dasharray ease 0s, 0.5s stroke-dashoffset ease 0s; }
 
 .line.bottom {
-  transition: 0.5s stroke-dasharray ease 0.25s, 0.5s stroke-dashoffset ease 0.25s;
-}
+  transition: 0.5s stroke-dasharray ease 0.25s, 0.5s stroke-dashoffset ease 0.25s; }
 
 .line.middle {
-  transition: 0.25s stroke-dasharray ease 0.25s, 0.25s stroke-dashoffset ease 0.25s;
-}
+  transition: 0.25s stroke-dasharray ease 0.25s, 0.25s stroke-dashoffset ease 0.25s; }
 
 .active .line.middle {
-  transition: 0.25s stroke-dasharray ease 0s,  0.25s stroke-dashoffset ease 0s;
-}</code></pre>
+  transition: 0.25s stroke-dasharray ease 0s,  0.25s stroke-dashoffset ease 0s; }</code></pre>
 
 					<aside class="notes">
 Then, those two states: hamburger and cross - can be animated between using a simple class toggle.<br>
