@@ -1573,6 +1573,72 @@ svg.map {
 .ac-checkbox input[type="checkbox"]:checked + label svg path {
   stroke-dashoffset: 0px; }
 
+.dashes {
+  color: #FFF;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: left;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 520px;
+  /* Demo */
+  /* Code */
+  /* Controls */ }
+  .dashes .demo {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 20px 0; }
+  .dashes .show {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #1d4a5e;
+    padding: 48px; }
+  .dashes .show svg {
+    display: block;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto; }
+  .dashes .code {
+    flex: 1;
+    background: #2D2D2D;
+    color: #E4E4E4;
+    padding: 20px;
+    line-height: 1.4;
+    font-size: 24px;
+    overflow: auto;
+    color: #bdbbff;
+    font-family: monospace; }
+  .dashes .code span {
+    color: #FFF; }
+  .dashes .dash-controls {
+    background: #FFF;
+    color: #000;
+    padding: 20px;
+    line-height: 1.4;
+    font-size: 16px;
+    overflow: auto;
+    margin: 20px 0;
+    width: 320px; }
+  .dashes .dash-controls p {
+    margin-top: 0;
+    line-height: 1.4;
+    margin-bottom: 20px; }
+  .dashes .dash-controls label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: monospace;
+    color: #272775; }
+  .dashes .dash-controls .field {
+    margin-bottom: 20px; }
+  .dashes .dash-controls input {
+    width: 100%; }
+
 .directional .button {
   line-height: 100px;
   padding: 0;

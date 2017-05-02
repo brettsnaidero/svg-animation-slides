@@ -1228,7 +1228,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.1);
+  background: #1d4a5e;
   width: 90%;
   margin: 20px auto;
   position: relative;

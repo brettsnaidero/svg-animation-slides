@@ -539,70 +539,146 @@ So I mentioned you can style the stroke on an SVG element - you actually have a 
 
 				<!-- Slide : Line animation with CSS 2 -->
 				<section>
-					<p>The <strong><code>stroke-dasharray</code></strong> attribute controls the pattern of dashes and gaps used to stroke paths.</p>
+					<h3 style="margin-bottom: 10px;">Animating lines with <br><code>stroke-dasharray</code> + <code>stroke-dashoffset</code></h3>
 
-					<br>
+					<div class="dashes">
+						<!-- Demo -->
+						<div class="demo">
+						  <div class="squiggle-container squiggle-interactive show">
+						    <svg xmlns="http://www.w3.org/2000/svg" width="400px" height="200px" viewBox="0 0 400 200">
+									<path
+										stroke="#FFF"
+										stroke-linecap="round"
+										stroke-width="6px"
+										fill="none"
+										stroke-dasharray="321.24 321.24"
+										stroke-dashoffset="113.37"
+										d="M20.7,129.4c-1-11.5,1.3-21.9,9.1-30.8c7.3-8.2,17.6-13.4,28.3-15.8c7-1.6,14.5-2.1,21.5-0.1
+	c9.1,2.6,16.5,9.1,22.7,16.3c10.3,12,17.8,26.2,27.5,38.7s22.7,23.6,38.4,26c10.2,1.5,20.6-0.8,30.2-4.5c10.1-3.9,22-10.6,25.5-21.5
+	c2.3-6.9,0.9-15.1-4-20.5c-4.9-5.4-13.4-7.4-20-4.3c-6.6,3.2-10.3,11.6-7.6,18.4c2.3,5.8,8.5,9.4,14.7,10.1c6.2,0.7,12.4-0.9,18.3-3
+	c13.8-4.9,27.5-13.2,32.9-26.8c4.5-11.3,2.3-24.1,4.6-36.1c3.6-17.9,17.8-32.1,35.1-37.2c19.6-5.7,41.6-0.1,57.8,12.3
+	c11.9,9.1,21.4,22.1,23.3,36.9c1.9,14-3.1,28.3-11.6,39.6c-6.4,8.5-14.8,15.5-24.8,19.1c-19.7,7-44.1-1.1-56.2-18.1
+	c-7.3-10.2-9.5-25.7-1-36"/>
+						      <path
+										stroke="rgba(255,255,255,0.2)"
+										stroke-linecap="round"
+										stroke-width="3px"
+										fill="none"
+										d="M20.7,129.4c-1-11.5,1.3-21.9,9.1-30.8c7.3-8.2,17.6-13.4,28.3-15.8c7-1.6,14.5-2.1,21.5-0.1
+	c9.1,2.6,16.5,9.1,22.7,16.3c10.3,12,17.8,26.2,27.5,38.7s22.7,23.6,38.4,26c10.2,1.5,20.6-0.8,30.2-4.5c10.1-3.9,22-10.6,25.5-21.5
+	c2.3-6.9,0.9-15.1-4-20.5c-4.9-5.4-13.4-7.4-20-4.3c-6.6,3.2-10.3,11.6-7.6,18.4c2.3,5.8,8.5,9.4,14.7,10.1c6.2,0.7,12.4-0.9,18.3-3
+	c13.8-4.9,27.5-13.2,32.9-26.8c4.5-11.3,2.3-24.1,4.6-36.1c3.6-17.9,17.8-32.1,35.1-37.2c19.6-5.7,41.6-0.1,57.8,12.3
+	c11.9,9.1,21.4,22.1,23.3,36.9c1.9,14-3.1,28.3-11.6,39.6c-6.4,8.5-14.8,15.5-24.8,19.1c-19.7,7-44.1-1.1-56.2-18.1
+	c-7.3-10.2-9.5-25.7-1-36"/>
+						    </svg>
 
-					<span>
-						<pre style="width: 400px; padding: 0; margin: 0 auto;"><code style="font-size: 20px;" class="css">stroke-dasharray: 10px;</code></pre>
-						<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-							<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10px; stroke-dashoffset: 0px;" />
-							<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1px;" />
-						</svg>
-					</span>
+						  </div>
+						  <!-- Code -->
+						  <div class="code codehilite">
+						    <span class="class">.line</span> {
+						    <div>&nbsp;&nbsp;stroke-dasharray: <span id="dasharray">0</span>;</div>
+						    <div>&nbsp;&nbsp;stroke-dashoffset: <span id="dashoffset">0</span>;</div>
+						    }
+						  </div>
+						</div>
 
-					<br><br>
+						<!-- Controls -->
+						<div class="form-rows squiggle-sliders dash-controls">
+						  <p>Dragging the sliders will adjust the CSS values.</p>
+						  <div class="form-rows-inner">
+						    <div class="field">
+						      <label for="array-input" class="label">stroke-dasharray:</label>
+						      <div class="input">
+						        <input id="array-input" type="range" min="0" max="1" step="any" value="0">
+						      </div>
+						    </div>
+						    <div class="field">
+						      <label for="offset-input" class="label">stroke-dashoffset:</label>
+						      <div class="input">
+						        <input id="offset-input" type="range" min="0" max="1" step="any" value="0">
+						      </div>
+						    </div>
+						  </div>
+						</div>
 
-					<span class="fragment">
-						<pre style="width: 400px; padding: 0; margin: 0 auto;"><code style="font-size: 20px;" class="css">stroke-dasharray: 10px 20px;</code></pre>
-						<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-							<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10px 20px; stroke-dashoffset: 0px;" />
-							<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1px;" />
-						</svg>
-					</span>
+						<script>
+						// Code stolen from Jake Archibald
+						// https://jakearchibald.com/2013/animated-line-drawing-svg/
+						var supportsInlineSvg = (function() {
+						    var div = document.createElement('div');
+						    div.innerHTML = '<svg/>';
+						    return (div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
+						}());
 
-					<br><br>
+						var supportsInputRange = (function() {
+						    var input = document.createElement('input');
+						    input.setAttribute('type', 'range');
+						    return input.type != 'text';
+						  }());
+						  document.documentElement.className += (supportsInlineSvg ? ' inline-svg' : '') + (supportsInputRange ? ' input-range' : '');
 
-					<span class="fragment">
-						<pre style="width: 400px; padding: 0; margin: 0 auto;"><code style="font-size: 20px;" class="css">stroke-dasharray: 10px 20px 5px;</code></pre>
-						<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-							<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10px 20px 5px; stroke-dashoffset: 0px;" />
-							<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1px;" />
-						</svg>
-					</span>
+						// line and controls
+						(function() {
+						  if (!supportsInlineSvg || !supportsInputRange) return;
+						  document.querySelector('.squiggle-sliders').style.display = 'block';
+						  var squiggleContainer = document.querySelector('.squiggle-interactive');
+						  var path = squiggleContainer.querySelector('path');
+						  var pathLen = path.getTotalLength();
+						  var squiggleCode = (function() {
+						    var code = squiggleContainer;
+						    do {
+						      code = code.nextSibling
+						    } while (!code.classList || !code.classList.contains('codehilite'));
+						    return code;
+						  }());
 
-					<aside class="notes">
---- Inspector Time ---
-					</aside>
-				</section>
+						  var dasharrayCode = squiggleCode.querySelector('#dasharray');
+						  var dashoffsetCode = squiggleCode.querySelector('#dashoffset');
 
-				<section>
-					<h3 style="margin-bottom: 40px;">Animating lines with <br><code>stroke-dasharray</code> + <code>stroke-dashoffset</code></h3>
-					<p>We use <strong><code>stroke-dasharray</code></strong> to define a 'dash'<br>which is the length of the entire path.</p>
-					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: white; stroke-linecap: round; stroke-width: 2px; stroke-dasharray: 90px; stroke-dashoffset: 0px;" />
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1px;" />
-					</svg>
-					<p>Then, we use <strong><code>stroke-dashoffset</code></strong> to move our dash<br>until it's no longer visible.</p>
-					<svg viewBox="0 0 100 10" style="width: 800px; margin: 0 auto 0 auto;">
-						<style>
-							.moveme {
-								animation: 5s moveline ease-in-out infinite;
-								stroke: white;
-								stroke-width: 2px;
-								stroke-dasharray: 90px 100px;
-								stroke-dashoffset: 0px;
-								stroke-linecap: round;
-							}
-							@keyframes moveline {
-								to {
-									stroke-dashoffset: 91px;
-								}
-							}
-						</style>
-						<line class="moveme" x1="5" y1="5" x2="95" y2="5" />
-						<line x1="5" y1="5" x2="95" y2="5" style="stroke: rgba(255,255,255,0.25); stroke-width: 1px;" />
-					</svg>
+						  function updateCode(dasharray, dashoffset) {
+						    dasharrayCode.textContent = dasharray; // + "px";
+						    dashoffsetCode.textContent = dashoffset; // + "px";
+						  }
+						  function updateSvg(dasharray, dashoffset) {
+						    path.setAttribute('stroke-dasharray', dasharray);
+						    path.setAttribute('stroke-dashoffset', dashoffset);
+						  }
+
+						  var arraySlider = document.querySelector('#array-input');
+						  var offsetSlider = document.querySelector('#offset-input');
+
+						  function change() {
+						    var arrayVal = (Math.pow(arraySlider.value, 2) * pathLen);
+						    var array = '';
+
+						    if (arrayVal && arrayVal < 1) {
+						      // avoiding numbers less than 1, can take ages to render
+						      arrayVal = 1;
+						    }
+
+						    if (arrayVal > 0) {
+						      arrayVal = arrayVal.toFixed(2);
+						      array = arrayVal + " " + arrayVal;
+						    }
+
+						    var offset = (offsetSlider.value * pathLen).toFixed(2);
+						    updateSvg(array, offset);
+						    updateCode(array, offset);
+						  }
+
+						  if ('oninput' in arraySlider) {
+						    arraySlider.oninput = change;
+						    offsetSlider.oninput = change;
+						  }
+						  else {
+						    arraySlider.onchange = change;
+						    offsetSlider.onchange = change;
+						  }
+
+						  change();
+						}());
+						</script>
+					</div>
 
 					<aside class="notes">
 The way line animations have been created is really quite simple.
@@ -2043,7 +2119,9 @@ HTML-wise, for this we just need to place our SVG inside the label element, whic
 				</section>
 
 				<section>
-					<h5>Visually hide the input</h5>
+					<h5>Visually hide the input<br>and create a fake check box in it's place</h5>
+					<div class="columns">
+						<div class="left-col">
 <pre><label>CSS</label><code style="font-size: 20px; line-height: 1.4;" class="css">/* Visually Hide input */
 input[type="checkbox"] {
   opacity: 0;
@@ -2058,14 +2136,8 @@ input[type="checkbox"] {
   margin-top: -25px;
   position: absolute;
 }</code></pre>
-
-					<aside class="notes">
-Then we can visually hide the input...
-					</aside>
-				</section>
-
-				<section>
-					<h5>Create our fake check box</h5>
+						</div>
+						<div class="right-col">
 <pre><label>CSS</label><code style="font-size: 20px; line-height: 1.4;" class="css">/* Fake Check 'box' */
 label:before {
   content: '';
@@ -2078,10 +2150,14 @@ label:before {
   margin-top: -25px;
   position: absolute;
   cursor: pointer;
-}</code></pre>
+}
+&nbsp;</code></pre>
+
+						</div>
+					</div>
 
 					<aside class="notes">
-Create a fake input box or circle in it's place using a psuedo element....
+Then we can visually hide the input and create a fake input box or circle in it's place using a psuedo element....
 					</aside>
 				</section>
 
@@ -2117,13 +2193,13 @@ input[type="checkbox"]:checked + label svg {
 				</section>
 
 				<!-- "You don't need JS" slide -->
-				<section data-transition="fade-in slide-out" data-transition-speed="slow"> <!-- data-background-color="#000000" -->
+				<section data-transition="fade-in slide-out" data-transition-speed="slow">
 					<h3>SVG + HTML + CSS = 💖</h3>
 					<p>Using SVG as an <em>extension</em> of HTML allows you<br>to accomplish <strong>more</strong> in the browser.</p>
 					<ul>
-						<li>Easy to learn the basics</li>
-						<li>Use existing knowledge of graphics editors</li>
-						<li>Use existing knowledge of CSS</li>
+						<li>Easy to read and understand</li>
+						<li>Easy to style and animate</li>
+						<li>Let you do more in the browser</li>
 					</ul>
 
 					<aside class="notes">
@@ -2154,7 +2230,7 @@ However, there are a whole bunch of JS libraries out there that can help you wit
 				<section>
 					<h3>Advantages of using a JS library</h3>
 					<ul>
-						<li>Browser consistency</li>
+						<li>Support IE and older browsers</li>
 						<li class="fragment">Simplify chaining animations</li>
 						<li class="fragment">Programmatic animation</li>
 						<li class="fragment">Tweening and shape animation</li>
@@ -2171,27 +2247,31 @@ Some of these libraries also let you do things like shape morphing/tweening, for
 					<h3>Example: JS animation with <em>Velocity</em></h3>
 					<div>
 						<svg class="velocity">
-					    <rect id="rect" width="25" height="25" x="10%" y="10%" fill="gray" stroke="#000" stroke-width="0" />
+					    <rect id="rect" width="25" height="25" x="10%" y="10%" fill="#FFF" stroke="#6ac7fd" stroke-width="0" />
 						</svg>
 						<style>
 						svg.velocity {
 						  display: block;
 						  width: 500px;
 							margin: 0 auto;
-							background-color: #eaebeb;
+							background-color: #1d4a5e;
 						}
-
 						.velocity rect {
 						  transform-origin: 0% 0%;
 						}
 						</style>
 					</div>
-					<button class="button" id="show-velocity" title="Play">Show Animation</button>
-<pre><label>JS</label><code style="font-size: 20px; line-height: 1.4;" class="js">$("#rect")
-  .delay(500)
-  .velocity({ x: "+=200", y: "25%" })
-  .velocity({ fillGreen: 255, strokeWidth: 2 })
-  .velocity({ height: 50, width: 50 })
+					<button class="button" id="show-velocity" title="Play" style="padding-right: 70px; position: relative;">
+						<div style="position: absolute; top: 0; right: 0px; width: 50px; bottom: 0; background-color: rgba(255,255,255,0.1);"></div>
+						<svg style="position: absolute; top: 50%; margin-top: -10px; right: 15px; width: 20px; height: 20px;" viewBox="0 0 20 20">
+							<polygon fill="#FFF" points="2,2 15,10 2,18" />
+						</svg>
+						Run Animation
+					</button>
+<pre><label>JS</label><code style="font-size: 20px; line-height: 1.4;" class="js">$("#rect").delay(500)
+  .velocity({ x: "+=160", y: "25%" })
+  .velocity({ fill: "#0d7ea1", strokeWidth: 3 })
+  .velocity({ height: 80, width: 80 })
   .velocity({ rotateZ: 90, scaleX: 0.5 })
   .velocity("reverse", { delay: 250 });</code></pre>
 
@@ -2204,10 +2284,11 @@ as in this little example I grabbed off the Velocity website.
 
 				<!-- Conclusion -->
 				<section data-transition="fade-in slide-out">
-					<h3>In Conclusion</h3>
-					<p>If you know HTML &amp; CSS, SVG is easy to learn</p>
-					<p class="fragment">Animating SVG is fun!</p>
-					<p class="fragment"><strong>SVG gives your <span>HTML/CSS superpowers</span></strong></p>
+					<h3><strong>SVG gives you<br><span>HTML/CSS superpowers</span></strong> 😎</h3>
+					<p class="fragment">If you know HTML &amp; CSS, SVG is easy to learn</p>
+					<p class="fragment">It lets you do cool things you can't do with just HTML/CSS</p>
+					<p class="fragment">Animating SVG is fun and useful! Get creative</p>
+
 
 					<aside class="notes">
 I hope you got something out of this talk, if you haven't played too much with SVG, I hope you go away and have a bit of a play<br>
@@ -2223,6 +2304,7 @@ So I hope you agree with me when I say - "If you know HTML, SVG is easy to learn
 					<p><a href="https://brettsnaidero.github.io/svg-animation-slides/" title="Slides">brettsnaidero.github.io/svg-animation-slides</a></p>
 					<br>
 					<h4>The Demos</h4>
+					<p>Dash Visualiser: <a href="http://codepen.io/brettsnaidero/pen/qmjdBR" title="Dash Visualiser">codepen.io/brettsnaidero/pen/qmjdBR</a></p>
 					<p>Hamburger/Cross: <a href="http://codepen.io/brettsnaidero/pen/zwvorr" title="Hamburger Icon">codepen.io/brettsnaidero/pen/zwvorr</a></p>
 					<p>Checkboxes/Radios: <a href="https://codepen.io/brettsnaidero/pen/rmjjgN" title="Checkboxes and Radio Buttons">codepen.io/brettsnaidero/pen/rmjjgN</a></p>
 					<br>
@@ -2243,14 +2325,13 @@ Thank you so much for listening, if you have any questions please come find me d
 		<script src="./js/velocity.js" type="text/javascript"></script>
 		<script type="text/javascript">
 		$('#show-velocity').on('click', function() {
-			$("#rect")
-			.delay(500)
-			.velocity({ x: "+=200", y: "25%" })
-			.velocity({ fillGreen: 255, strokeWidth: 2 })
-			.velocity({ height: 50, width: 50 })
-			.velocity({ rotateZ: 90, scaleX: 0.5 })
-			.velocity("reverse", { delay: 250 });
-		})
+				$("#rect").delay(500)
+				.velocity({ x: "+=160", y: "25%" })
+				.velocity({ fill: "#0d7ea1", strokeWidth: 3 })
+				.velocity({ height: 80, width: 80 })
+				.velocity({ rotateZ: 90, scaleX: 0.5 })
+				.velocity("reverse", { delay: 250 });
+			})
 		</script>
 		<script>
 			// Hamburger on off
